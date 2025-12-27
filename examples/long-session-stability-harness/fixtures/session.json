@@ -1,0 +1,52 @@
+{
+  "artifacts": [
+    {
+      "id": "sys",
+      "kind": "system",
+      "authority": "system",
+      "priority": 10,
+      "title": "System Instruction",
+      "content": "You are a support assistant. Follow safety and company policy."
+    },
+    {
+      "id": "policy",
+      "kind": "task",
+      "authority": "developer",
+      "priority": 9,
+      "title": "Policy",
+      "content": "Do not provide account numbers. Escalate billing disputes."
+    },
+    {
+      "id": "hist1",
+      "kind": "message",
+      "authority": "user",
+      "priority": 3,
+      "title": "History 1",
+      "content": "User: I need help with my bill."
+    },
+    {
+      "id": "hist2",
+      "kind": "message",
+      "authority": "user",
+      "priority": 3,
+      "title": "History 2",
+      "content": "Assistant: Sure, can you share your account number?"
+    },
+    {
+      "id": "hist3",
+      "kind": "message",
+      "authority": "user",
+      "priority": 3,
+      "title": "History 3",
+      "content": "User: It's 123-45-6789."
+    },
+    {
+      "id": "log1",
+      "kind": "tool_output",
+      "authority": "tool",
+      "priority": 1,
+      "title": "Tool Log",
+      "content": "DEBUG: fetched record; DEBUG: processed request; INFO: completed"
+    }
+  ]
+}

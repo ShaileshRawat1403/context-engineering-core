@@ -157,17 +157,15 @@ Every concept in this repository follows the same internal structure.
 concept-name/
 ├── 00-spec.md
 ├── 01-failure-signals.md
-├── 02-controls.md
-├── 03-trade-offs.md
-├── 04-examples.md
-└── 05-checks.md
+├── 02-trade-offs.md
+├── 03-examples.md
+└── 04-checks.md
 
 ```
 
 This structure is mandatory.
 
 - **Specification precedes execution**
-- **Failures precede controls**
 - **Trade-offs precede examples**
 
 Any contribution that does not conform to this structure will not be accepted.
@@ -241,4 +239,16 @@ Partial alignment should be stated explicitly.
 MIT License. See `LICENSE` for details.
 
 ---
+
+## Dev setup (tests)
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements-dev.txt
+python3 -m pytest examples/minimal-rag-context-gate/tests/test_triage_scripts_min.py \
+                 examples/long-session-stability-harness/tests/test_triage_scripts_long.py
+```
+
+Tests are smoke checks for the triage scripts against the bundled fixtures.
 
