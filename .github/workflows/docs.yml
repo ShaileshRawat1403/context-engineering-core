@@ -31,6 +31,32 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install mkdocs-material
+      - name: Sync docs content
+        run: |
+          python - <<'PY'
+          import shutil, pathlib, os
+          root = pathlib.Path(".")
+          doc_dir = root / "docs"
+          doc_dir.mkdir(exist_ok=True)
+          # top-level markdown files
+          for p in root.glob("*.md"):
+              shutil.copyfile(p, doc_dir / p.name)
+          # selected directories
+          for sub in [
+              "00-core","10-primitives","20-failure-mechanics","30-control-mechanisms",
+              "40-system-manifestations","50-governance","examples","skills","checklists","contracts"
+          ]:
+              src = root / sub
+              dst = doc_dir / sub
+              if dst.exists():
+                  shutil.rmtree(dst)
+              shutil.copytree(src, dst)
+          # ensure JS assets are present
+          (doc_dir / "js").mkdir(exist_ok=True)
+          src_js = root / "docs" / "js" / "mermaid-init.js"
+          if src_js.exists():
+              shutil.copyfile(src_js, doc_dir / "js" / "mermaid-init.js")
+          PY
       - name: Build site
         run: mkdocs build --clean
       - name: Upload artifact
