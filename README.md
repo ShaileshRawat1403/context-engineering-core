@@ -4,6 +4,15 @@ This repository defines **context engineering** as a discipline.
 
 It is a **specification-first, execution-oriented** reference for designing AI systems that depend on large language models, agent architectures, and human oversight.
 
+```mermaid
+flowchart TD
+    A[Primitives] --> B[Failure Mechanics]
+    B --> C[Controls]
+    C --> D[System Manifestations]
+    D --> E[Governance]
+    E -->|audits| A
+```
+
 The purpose of this repository is not to provide prompts, shortcuts, or framework-specific instructions. Its purpose is to make explicit:
 
 - what must be true for context-dependent AI systems to function reliably  
@@ -252,3 +261,11 @@ python3 -m pytest examples/minimal-rag-context-gate/tests/test_triage_scripts_mi
 
 Tests are smoke checks for the triage scripts against the bundled fixtures.
 
+## Rendering diagrams
+
+Mermaid source is kept as `.mmd`. To render all diagrams to SVG:
+
+```bash
+npm install -g @mermaid-js/mermaid-cli
+./scripts/render_diagrams.sh
+```

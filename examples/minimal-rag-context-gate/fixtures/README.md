@@ -34,3 +34,19 @@ python3 skills/operator/context-triage/scripts/reorder_by_priority.py --input ex
 These outputs are heuristic (simple scoring, not true tokenization). Use them to validate wiring, not correctness.
 
 Update `EXPECTED.md` with actual outputs from your environment after running the scripts.
+---
+title: "Fixtures — Minimal RAG Context Gate"
+status: stable
+version: "1.0"
+last_updated: "2025-01-01"
+---
+
+# Fixtures
+
+Fixtures include sample queries, documents, and expected outputs for gating tests.
+
+```mermaid
+flowchart TD
+    Docs[Sample Docs] --> Gate[Gate Scripts]
+    Gate --> Expected[Expected Context + Output]
+```

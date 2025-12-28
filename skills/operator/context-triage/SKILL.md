@@ -24,6 +24,16 @@ The skill enforces a fixed attention budget and prevents low-signal, redundant, 
 
 This skill operates **before generation** and **before tool execution**.
 
+```mermaid
+flowchart TD
+    In[Candidate Context] --> Scope[Scope Filter]
+    Scope --> Authority[Authority Ordering]
+    Authority --> Dedup[Redundancy Scan]
+    Dedup --> Budget[Budget Gate]
+    Budget --> Out[Admitted Context + Exclusion Log]
+    Budget --> Esc[Escalate if mandatory items excluded]
+```
+
 ---
 
 ## Why It Matters

@@ -17,6 +17,16 @@ depends_on:
 
 These patterns apply primitives and controls to evaluation so it remains a governance activity, not a source of interference or drift.
 
+```mermaid
+flowchart TD
+    Gen[Generation] --> Out[Outputs]
+    Out --> Val[Outcome Validation]
+    Bench[Benchmarks] -->|freshness| Val
+    Rubric[Rubric] -. masked .-> Gen
+    Adver[Adversarial Tests] -->|isolated| Sandbox
+    Sandbox -->|findings| Val
+```
+
 ---
 
 ## Pattern: Rubric Isolation

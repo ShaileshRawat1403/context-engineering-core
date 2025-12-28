@@ -45,6 +45,14 @@ Properties:
 - Failure mechanics (degradation, interference) are attention-mediated.
 - Primitives that ignore attention become aspirational, not operational.
 
+```mermaid
+flowchart TD
+    CI[Context Inputs] --> P[Attention Pressure]
+    P -->|overload| Deg[Degradation]
+    P -->|competition| Int[Interference]
+    P -->|managed by| Ctrl[Selection / Ordering / Compression]
+```
+
 ---
 
 ## Attention vs Context Size

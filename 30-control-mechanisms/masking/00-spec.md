@@ -109,6 +109,13 @@ graph TD
 
 A mask may apply along one or more dimensions.
 
+```mermaid
+flowchart LR
+    C[Context Pool] --> Mask[Mask by Role/Phase/Task/Authority]
+    Mask --> Visible[Visible Context]
+    Mask --> Hidden[Hidden (no influence)]
+```
+
 ---
 
 ## Common Masking Forms

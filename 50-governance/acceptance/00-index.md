@@ -19,4 +19,12 @@ This section will specify:
 - who can grant acceptance and under what authority
 - how to document scope, limits, and expiration of acceptance
 
+```mermaid
+flowchart TD
+    E[Evidence Package] --> R[Review + Checks]
+    R --> A[Acceptance Decision]
+    A --> S[Scope + Limits Logged]
+    S --> X[Expiration/Refresh Date]
+```
+
 Acceptance documents bind implementations to declared constraints; they do not redefine those constraints.

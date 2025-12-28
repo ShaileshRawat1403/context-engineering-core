@@ -22,6 +22,15 @@ related_failures:
 
 These examples show how hard isolation boundaries prevent cross-domain influence and contain failures.
 
+```mermaid
+flowchart LR
+    A[Task A Context] -. blocked .-> B[Task B]
+    A -->|explicit handoff| H[Typed Artifact]
+    H --> B
+    style A fill:#eef,border:#336
+    style B fill:#efe,border:#363
+```
+
 ---
 
 ## Example 1: Parallel Tasks Isolation

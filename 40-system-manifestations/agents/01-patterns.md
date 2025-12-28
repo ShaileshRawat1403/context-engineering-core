@@ -20,6 +20,15 @@ These patterns apply primitives and controls to single- and multi-agent orchestr
 
 They do **not** introduce new controls; they combine selection, ordering, masking, validation, and isolation to prevent interference and poisoning.
 
+```mermaid
+flowchart LR
+    SA[Single Agent] -->|scope + ordering| O1[Bounded Task]
+    PE[Planner → Executor] -->|mask + isolate| O2[Decisive Execution]
+    MA[Multi-Agent Turns] -->|single-writer + validation| O3[Arbitrated Plan]
+    TS[Tool Specialist] -->|sandbox + validation| O4[Trusted Output]
+    EX[Experimental Sandbox] -->|isolated export| O5[Safe Experiments]
+```
+
 ---
 
 ## Pattern: Single Agent with Hard Scope

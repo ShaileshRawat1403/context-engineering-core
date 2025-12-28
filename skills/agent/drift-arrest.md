@@ -17,6 +17,15 @@ last_reviewed: 2025-12-26
 Canonical definition: `skills/operator/drift-arrest/SKILL.md`  
 If instructions conflict, the operator skill prevails.
 
+```mermaid
+flowchart TD
+    Pre[Preconditions] --> Inspect[Inspect Artifacts]
+    Inspect --> Validate[Validate Scope/Provenance/Freshness]
+    Validate --> Flag[Flag Drift Signals]
+    Flag --> Act[Recommend Re-grounding/Anchoring]
+    Flag --> Esc[Escalate if intent misalignment persists]
+```
+
 ---
 
 ## Scope and Authority

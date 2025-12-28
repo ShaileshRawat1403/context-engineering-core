@@ -15,6 +15,17 @@ Escalation defines when execution must **stop** and control is handed to higher 
 
 It prevents silent continuation when validation, isolation, or authority fails.
 
+```mermaid
+flowchart TD
+    Detect[Trigger Detected] --> Halt[Halt Execution]
+    Halt --> Capture[Capture Evidence/State]
+    Capture --> Notify[Notify Escalation Owner]
+    Notify --> Decide[Owner Decision]
+    Decide -->|remediate| Fix[Remediation + Revalidate]
+    Decide -->|rollback| RB[Rollback]
+    Decide -->|accept risk| Doc[Document Approval]
+```
+
 ---
 
 ## Triggers (Non-Negotiable)

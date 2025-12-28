@@ -22,6 +22,14 @@ This section will address:
 - how to validate outcomes against intent (validation, lifetimes)
 - how to prevent evaluation from becoming a proxy that induces drift
 
+```mermaid
+flowchart LR
+    G[Generation] -. no rubric visibility .-> R[Rubric]
+    O[Outputs] --> V[Validation vs Intent]
+    V --> S[Scores + Findings]
+    Bench[Benchmarks] -->|freshness check| V
+```
+
 Evaluation documents must apply primitives and controls; they do not invent new success criteria.
 
 ---

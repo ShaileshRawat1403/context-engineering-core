@@ -22,6 +22,14 @@ Drift Arrest is the intervention used to **detect and correct directional misali
 
 The skill revalidates intent, proxies, and assumptions, and enforces lifetimes and external grounding.
 
+```mermaid
+flowchart TD
+    Gather[Gather Artifacts + Outcomes] --> Validate[Validate provenance/scope/freshness]
+    Validate --> Signals[Identify Drift Signals]
+    Signals --> Controls[Apply Anchoring/Re-grounding/Validation]
+    Controls --> Report[Report + Escalate if misalignment persists]
+```
+
 ---
 
 ## Why It Matters

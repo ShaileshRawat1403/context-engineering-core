@@ -23,6 +23,16 @@ This document defines **what degradation is not** and provides **minimal quantit
 
 Its purpose is to prevent **over-diagnosis**, **over-control**, and **false mitigation**.
 
+```mermaid
+flowchart TD
+    Q[Quality Over Time] -->|stable| N1[Not Degradation]
+    Q -->|declining| D[Investigate Degradation]
+    N1 -->|context length grows| N2[Check for Drift/Interference]
+    D --> P[Apply Proxies]
+    P -->|adherence down| Flag1[Early Warning]
+    P -->|utilization down| Flag2[Attention Saturation]
+```
+
 ---
 
 ## Non-Example 1: Context Growth Without Quality Decay

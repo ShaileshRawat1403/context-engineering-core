@@ -94,6 +94,14 @@ graph TD
 - Scope determines where signal is relevant.
 - Lifetimes determine how long signal remains signal.
 
+```mermaid
+flowchart LR
+    C[Context Pool] --> Sel[Signal Selection]
+    Sel --> Att[Attention Allocation]
+    Att --> Outcome
+    Sel -. excluded .-> Noise[Noise]
+```
+
 ---
 
 ## Signal Is Phase-Dependent

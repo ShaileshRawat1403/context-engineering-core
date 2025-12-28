@@ -17,6 +17,15 @@ last_reviewed: 2025-12-26
 Canonical definition: `skills/operator/retrieval-gating/SKILL.md`  
 If instructions conflict, the operator skill prevails.
 
+```mermaid
+flowchart TD
+    Pre[Preconditions] --> Score[Score Retrievals]
+    Score --> Filter[Filter by Scope/Authority]
+    Filter --> Order[Order by Relevance]
+    Order --> Output[Emit Admitted Retrieval Set]
+    Filter --> Esc[Stop/Escalate on authority conflict]
+```
+
 ---
 
 ## Scope and Authority

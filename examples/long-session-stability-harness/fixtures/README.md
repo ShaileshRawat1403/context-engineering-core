@@ -8,6 +8,14 @@ last_updated: "2025-01-01"
 
 Use `session.json` to simulate long-history pressure and exercise triage scripts.
 
+```mermaid
+flowchart TD
+    Session[session.json] --> Budget[Budget Report]
+    Session --> Dupes[Duplicate Scan]
+    Session --> Order[Ordering Preview]
+    Budget & Dupes & Order --> Expected[EXPECTED.md]
+```
+
 ## Contents
 
 - `session.json` — system + policy constraints, 3-turn user history with PII, and a verbose tool log.

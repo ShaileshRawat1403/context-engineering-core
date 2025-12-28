@@ -18,6 +18,15 @@ last_reviewed: 2025-12-26
 This checklist is a **condensed execution aid** for experienced operators.  
 It does not replace the canonical procedure in `SKILL.md`.
 
+```mermaid
+flowchart TD
+    Pre[Preconditions] --> Filter[Scope Filter]
+    Filter --> Order[Authority Order]
+    Order --> Dedup[Deduplicate]
+    Dedup --> Budget[Enforce Budget]
+    Budget --> Out[Final Context + Log]
+```
+
 Use this only when the Context Triage skill is already understood.
 
 ---

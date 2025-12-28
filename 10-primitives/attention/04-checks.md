@@ -21,6 +21,15 @@ These checks verify that attention is explicitly budgeted, measured, and protect
 
 If any check fails, attention risk is unmanaged.
 
+```mermaid
+flowchart TD
+    B[Budget Declared] --> U[Utilization Measured]
+    U --> D[Deduplicate/Filter]
+    D --> O[Ordering Applied]
+    O --> P[Pruned Context]
+    P --> Q[Quality Probe]
+```
+
 ---
 
 ## Check 1: Budget Declaration

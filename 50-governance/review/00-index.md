@@ -19,4 +19,12 @@ This section will define:
 - who can approve or reject
 - how review outcomes are recorded and enforced
 
+```mermaid
+flowchart TD
+    Sub[Submission] --> Rev[Reviewer Analysis]
+    Rev --> Out[Outcome: Approve/Reject/Revise]
+    Out --> Log[Recorded with Rationale]
+    Log --> Enf[Enforced in Acceptance]
+```
+
 Review documents make explicit the authority and criteria for acceptance. They do not add new controls.

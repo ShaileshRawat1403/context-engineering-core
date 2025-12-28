@@ -19,6 +19,17 @@ related_failures:
 These examples show how attention pressure manifests and how explicit controls change outcomes.  
 They focus on **influence capacity**, not correctness.
 
+```mermaid
+flowchart TD
+    H[Historical Context] -->|too large| P1[Attention Pressure]
+    R[Retrieved Docs] -->|verbose| P1
+    L[Tool Logs] -->|noisy| P1
+    P1 -->|apply controls| C1[Selection]
+    P1 -->|apply controls| C2[Compression]
+    P1 -->|apply controls| C3[Ordering]
+    C1 & C2 & C3 --> A[Admitted, bounded context]
+```
+
 ---
 
 ## Example 1: Long History Overload

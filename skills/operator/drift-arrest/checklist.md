@@ -17,6 +17,14 @@ last_reviewed: 2025-12-26
 
 Condensed aid; use only when SKILL is understood.
 
+```mermaid
+flowchart TD
+    Pre[Preconditions] --> Collect[Collect artifacts + outcomes]
+    Collect --> Validate[Validate provenance/scope/freshness]
+    Validate --> Signals[Identify drift signals]
+    Signals --> Act[Apply controls or escalate]
+```
+
 ---
 
 ## Preconditions

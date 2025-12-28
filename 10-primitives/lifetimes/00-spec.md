@@ -84,6 +84,16 @@ graph TD
 
 Each class introduces different risks.
 
+```mermaid
+flowchart LR
+    E[Ephemeral] -->|promotion| S[Session]
+    S -->|promotion| D[Durable]
+    D -->|promotion| P[Persistent]
+    P -. no auto downgrade .-> D
+    D -. manual downgrade .-> S
+    S -. expire/reset .-> E
+```
+
 ---
 
 ## Ephemeral Lifetime

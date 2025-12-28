@@ -13,6 +13,17 @@ This document defines the **canonical set of primitives** used throughout this r
 Primitives are **non-negotiable structural concepts**.  
 They describe constraints that exist regardless of model choice, framework, or tooling.
 
+```mermaid
+graph TD
+    A[Attention] --> B[Boundaries]
+    B --> Sc[Scope]
+    B --> L[Lifetimes]
+    A --> N[Signal vs Noise]
+    Sc -->|feeds| FM[Failure Mechanics]
+    L -->|feeds| FM
+    N -->|feeds| FM
+```
+
 Primitives are not techniques.  
 They are **facts of system behavior**.
 

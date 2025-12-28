@@ -18,6 +18,14 @@ last_reviewed: 2025-12-26
 
 Condensed aid; use only when SKILL is understood.
 
+```mermaid
+flowchart TD
+    Pre[Preconditions] --> Score[Score + Filter]
+    Score --> Dedup[Deduplicate]
+    Dedup --> Budget[Apply Retrieval Budget]
+    Budget --> Out[Ordered Retrieval Set + Log]
+```
+
 ---
 
 ## Preconditions

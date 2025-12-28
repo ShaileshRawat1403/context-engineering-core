@@ -23,6 +23,15 @@ Retrieval Gating is the intervention used to **control what retrieved content is
 
 The skill enforces relevance, scope, and trust tiers before retrieval enters active context.
 
+```mermaid
+flowchart TD
+    Candidates[Retrieved Items] --> Score[Score relevance + authority]
+    Score --> Filter[Filter + Deduplicate]
+    Filter --> Budget[Apply Retrieval Budget]
+    Budget --> Admit[Admit Ordered Set]
+    Budget --> Esc[Escalate if constraints displaced]
+```
+
 ---
 
 ## Why It Matters

@@ -22,6 +22,14 @@ Boundary Hardening is the intervention used to **make influence paths explicit a
 
 The skill enforces authority, scope, and isolation so that valid context cannot be overridden or leaked by lower-trust sources.
 
+```mermaid
+flowchart TD
+    Map[Map Boundaries] --> Detect[Detect Leakage]
+    Detect --> Enforce[Apply Masking/Isolation/Ordering]
+    Enforce --> Verify[Verify No Cross-Influence]
+    Verify --> Report[Log + Escalate Gaps]
+```
+
 ---
 
 ## Why It Matters

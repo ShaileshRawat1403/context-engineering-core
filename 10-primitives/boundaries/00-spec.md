@@ -86,6 +86,16 @@ graph TD
 
 Each dimension constrains a different failure axis.
 
+```mermaid
+flowchart LR
+    Input[Context Element] -->|must pass| Auth[Authority Boundary]
+    Input --> Scope[Scope Boundary]
+    Input --> Time[Temporal Boundary]
+    Input --> Persist[Persistence Boundary]
+    Input --> Channel[Channel Boundary]
+    Auth & Scope & Time & Persist & Channel --> Decision[Decision Influence]
+```
+
 ---
 
 ## Authority Boundaries

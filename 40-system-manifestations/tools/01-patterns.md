@@ -19,6 +19,17 @@ depends_on:
 These patterns apply primitives and controls to tool integration.  
 They constrain tool influence to prevent poisoning, interference, and degradation.
 
+```mermaid
+flowchart TD
+    Call[Tool Call] --> Out[Raw Output]
+    Out -->|schema + status| V[Validation]
+    V -->|pass| F[Filtered Fields]
+    F -->|in-scope?| S[Selection by Task/Phase]
+    S -->|yes| R[Reasoning]
+    S -->|no| Q[Quarantine]
+    Out -. logs .-> Audit[Audit Store]
+```
+
 ---
 
 ## Pattern: Schema-Validated Tool Calls

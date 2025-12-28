@@ -39,3 +39,22 @@ Order matches budget report: sys > task > user > doc1 > doc2 > doc3.
 - Near-duplicates: none with `--near-threshold 0.8 --shingle-k 3`
 
 Note: Outputs are heuristic (simple scoring). Re-run after script changes.
+---
+title: "Expected Outputs — Minimal RAG Context Gate"
+status: stable
+version: "1.0"
+last_updated: "2025-01-01"
+---
+
+# Expected Outputs
+
+```mermaid
+flowchart TD
+    Input[Input Bundle] --> Scripts[Gate Scripts]
+    Scripts --> Output[Expected Context + Logs]
+```
+
+- Admitted artifact IDs and ordering.
+- Exclusion reasons for filtered items.
+- Budget utilization summary.
+- Final response skeleton for tests.

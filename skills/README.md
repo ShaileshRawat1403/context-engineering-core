@@ -8,6 +8,15 @@ A skill describes *how an intervention is performed*, not *what an agent is capa
 Skills may be executed by humans or by agents.  
 **Authority never resides with the agent.**
 
+```mermaid
+flowchart TD
+    OP[Operator Skill] --> AG[Agent Skill]
+    OP --> KT[Kit/Gate]
+    OP --> Scripts[Demonstration Scripts]
+    AG -. derived from .-> OP
+    KT -. copy/paste guardrails .-> OP
+```
+
 ---
 
 ## What a skill is (in this repo)

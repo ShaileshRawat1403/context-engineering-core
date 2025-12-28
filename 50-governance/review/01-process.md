@@ -16,6 +16,15 @@ Review is the **governed inspection** of specs, controls, skills, or system chan
 
 It verifies evidence, checks, and alignment with declared scope and authority.
 
+```mermaid
+flowchart TD
+    Intake[Intake Complete?] -->|no| Back[Request Clarification]
+    Intake -->|yes| Evidence[Evidence + Checks Verified]
+    Evidence --> Risk[Trade-Offs/Risks Logged]
+    Risk --> Decision[Approve / Reject / Defer]
+    Decision --> Record[Record Outcome + Owner + Expiry]
+```
+
 ---
 
 ## Scope of Review

@@ -22,6 +22,14 @@ This section will cover:
 - how tool failures map to failure mechanics (poisoning, interference)
 - how to isolate untrusted tools from protected logic
 
+```mermaid
+flowchart LR
+    U[Untrusted Tool] -->|sandbox| Q[Quarantine]
+    Q -->|schema + validation| A[Admitted Fields]
+    A --> R[Reasoning Context]
+    Logs[Logs/Traces] -. masked .-> R
+```
+
 Tool documents must apply controls; they do not redefine them.
 
 ---

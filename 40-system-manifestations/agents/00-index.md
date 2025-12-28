@@ -23,6 +23,18 @@ This section will describe:
 - how agent collisions map to interference
 - how authority and escalation are enforced in orchestration
 
+```mermaid
+flowchart TD
+    O[Orchestrator] --> A1[Agent: Research]
+    O --> A2[Agent: Execute]
+    O --> A3[Agent: Review]
+    A1 -. typed handoff .-> A2
+    A2 -. typed handoff .-> A3
+    O -->|arbitration + ordering| D[Decision]
+    classDef agent fill:#eef,stroke:#336;
+    class A1,A2,A3 agent;
+```
+
 Agent documents must not redefine governance; they apply existing primitives and controls to orchestration.
 
 ---

@@ -15,6 +15,15 @@ Accountability ensures **ownership, traceability, and consequences** for decisio
 
 It connects controls and outcomes to responsible humans.
 
+```mermaid
+flowchart TD
+    Own[Owner Assigned] --> Dec[Decision Recorded]
+    Dec --> Audit[Immutable Audit Trail]
+    Audit --> Fail[Failure Detected]
+    Fail --> Attr[Attribution + Remediation Owner]
+    Attr --> Rep[Governance Reporting]
+```
+
 ---
 
 ## Ownership Mapping

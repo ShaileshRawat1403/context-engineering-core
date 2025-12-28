@@ -17,6 +17,15 @@ last_reviewed: 2025-12-26
 Canonical definition: `skills/operator/boundary-hardening/SKILL.md`  
 If instructions conflict, the operator skill prevails.
 
+```mermaid
+flowchart TD
+    Pre[Preconditions] --> Map[Map Boundaries]
+    Map --> Test[Run Leakage Tests]
+    Test --> Mask[Apply Masks/Isolation]
+    Mask --> Report[Report Findings + Remaining Gaps]
+    Test --> Esc[Stop/Escalate on breach]
+```
+
 ---
 
 ## Scope and Authority

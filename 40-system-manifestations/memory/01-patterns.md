@@ -18,6 +18,16 @@ depends_on:
 These patterns apply lifetimes, validation, and isolation to memory systems.  
 They prevent poisoning, drift, and interference from persistence.
 
+```mermaid
+flowchart TD
+    Q[Quarantine] -->|validated + approved| T[Trusted Memory]
+    T -->|read| V[Read-Time Validation]
+    V -->|pass| Use[Use in context]
+    V -->|fail| Reject[Reject/Refresh]
+    T -->|versioned| R[Rollback Path]
+    T -->|partitioned| P1[Role A] & P2[Role B]
+```
+
 ---
 
 ## Pattern: Quarantined Writes

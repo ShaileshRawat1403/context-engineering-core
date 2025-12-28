@@ -68,6 +68,13 @@ graph TD
     L --> D
 ```
 
+```mermaid
+flowchart LR
+    Input[Context Volume/Noise] --> Pressure[Attention Pressure]
+    Pressure -->|overload| Deg[Degradation]
+    Deg -->|symptoms| Quality[Quality Loss / Inconsistency]
+```
+
 Typical contributing conditions include:
 
 - unchecked accumulation of context

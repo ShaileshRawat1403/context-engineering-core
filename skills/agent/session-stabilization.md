@@ -17,6 +17,15 @@ last_reviewed: 2025-12-26
 Canonical definition: `skills/operator/session-stabilization/SKILL.md`  
 If instructions conflict, the operator skill prevails.
 
+```mermaid
+flowchart TD
+    Pre[Preconditions] --> Trim[Prune/Compress History]
+    Trim --> Dedup[Remove Redundancy]
+    Dedup --> Check[Verify Constraints Visible]
+    Check --> Out[Emit Stabilized Context]
+    Check --> Esc[Stop/Escalate on displacement risk]
+```
+
 ---
 
 ## Scope and Authority

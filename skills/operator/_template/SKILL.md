@@ -19,6 +19,14 @@ last_reviewed: 2025-12-26
 One paragraph describing what the intervention does, in operational terms.  
 No promises. No motivation. No “best practices”.
 
+```mermaid
+flowchart TD
+    Inputs[Inputs] --> Steps[Procedure]
+    Steps --> Checks[Required Checks]
+    Checks --> Outputs[Outputs/Reports]
+    Outputs --> Esc[Stop/Escalate if breached]
+```
+
 ## Why It Matters
 State the failure it prevents or contains.  
 Tie explicitly to failure mechanics (degradation, drift, interference, poisoning).

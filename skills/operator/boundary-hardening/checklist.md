@@ -17,6 +17,15 @@ last_reviewed: 2025-12-26
 
 Condensed aid; use only when SKILL is understood.
 
+```mermaid
+flowchart TD
+    Pre[Preconditions] --> Inv[Inventory Sources]
+    Inv --> Auth[Enforce Authority]
+    Auth --> Scope[Scope/Channel Separation]
+    Scope --> Iso[Isolation/Masking]
+    Iso --> Verify[Verify + Log]
+```
+
 ---
 
 ## Preconditions

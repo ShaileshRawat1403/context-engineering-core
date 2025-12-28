@@ -81,6 +81,16 @@ graph TD
 
 Each axis constrains a different class of failure.
 
+```mermaid
+flowchart LR
+    CE[Context Element] -->|applicability?| Task[Task Scope]
+    CE --> Role[Role Scope]
+    CE --> Phase[Phase Scope]
+    CE --> Agent[Agent Scope]
+    CE --> Artifact[Artifact Scope]
+    Task & Role & Phase & Agent & Artifact --> Allowed[Allowed Domain]
+```
+
 ---
 
 ## Task Scope

@@ -18,6 +18,17 @@ This document defines what it means to claim conformance with `context-engineeri
 Conformance is **not binary** and **not self-attested**.
 It is a governed claim that must be supported by evidence.
 
+```mermaid
+flowchart TD
+    S[Scope Declared] --> D[Dependencies Listed]
+    D --> C[Controls Named]
+    C --> K[Checks Run]
+    K --> T[Trade-Offs Logged]
+    T --> G[Governance Assigned]
+    G --> V[Validation Active]
+    V --> E[Evidence Package]
+```
+
 ---
 
 ## Scope of Conformance

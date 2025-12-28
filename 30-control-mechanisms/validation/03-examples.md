@@ -21,6 +21,19 @@ related_failures:
 
 These examples show how explicit validation gates prevent stale, untrusted, or out-of-scope artifacts from influencing behavior.
 
+```mermaid
+flowchart LR
+    C[Candidate Artifact] --> P[Provenance Check]
+    P -->|ok| S[Scope + Authority]
+    S -->|ok| L[Lifetime Fresh?]
+    L -->|ok| X[Conflict Check]
+    X -->|ok| A[Admitted]
+    P -->|fail| R1[Reject/Quarantine]
+    S -->|fail| R2[Reject/Quarantine]
+    L -->|fail| R3[Reject/Refresh]
+    X -->|fail| R4[Reject/Review]
+```
+
 ---
 
 ## Example 1: Session Summary Promotion

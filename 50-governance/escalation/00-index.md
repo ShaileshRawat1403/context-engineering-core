@@ -18,4 +18,12 @@ This section will clarify:
 - roles authorized to receive and act on escalations
 - required artifacts to accompany an escalation
 
+```mermaid
+flowchart TD
+    T[Trigger Detected] --> Stop[Stop Execution]
+    Stop --> Notify[Notify Escalation Owner]
+    Notify --> Package[Send Evidence Package]
+    Package --> Decision[Higher-Authority Decision]
+```
+
 Escalation documents enforce stop conditions; they prevent silent drift past governance boundaries.

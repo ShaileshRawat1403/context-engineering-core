@@ -22,6 +22,15 @@ This section will describe:
 - how poisoning and drift surface through persistence
 - how to constrain promotion, retention, and rollback
 
+```mermaid
+flowchart LR
+    E[Ephemeral] -->|validated| S[Session]
+    S -->|review + validation| D[Durable]
+    D -->|approval + isolation| P[Persistent]
+    P -->|rollback| D
+    E -. drop .-> X[Rejected]
+```
+
 Memory documents must never override primitives or controls; they instantiate them.
 
 ---

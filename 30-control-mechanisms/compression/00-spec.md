@@ -102,6 +102,14 @@ graph TD
 
 Each mode introduces different risks.
 
+```mermaid
+flowchart LR
+    Raw[Raw Context] --> Comp[Compression]
+    Comp --> Keep[Kept Signal (smaller)]
+    Comp --> Lost[Lost Detail/Noise]
+    Keep --> Attention[Attention Survives]
+```
+
 ---
 
 ### Selective Compression

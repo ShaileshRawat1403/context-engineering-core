@@ -23,6 +23,14 @@ The canonical definition lives in:
 
 If any instruction here conflicts with the operator skill, **this document is wrong**.
 
+```mermaid
+flowchart TD
+    Pre[Preconditions] --> Act[Allowed Actions]
+    Act --> Check[Required Checks]
+    Check --> Report[Required Reporting]
+    Check --> Stop[Stop/Escalate on failure]
+```
+
 ---
 
 ## Scope and Authority

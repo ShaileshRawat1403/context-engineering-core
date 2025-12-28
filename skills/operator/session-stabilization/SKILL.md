@@ -24,6 +24,15 @@ The skill enforces attention budgets, refreshes summaries, and resets scope to k
 
 This skill operates **between turns** and **before each new task phase**.
 
+```mermaid
+flowchart TD
+    Gather[Gather History] --> Prune[Prune Out-of-Scope/Redundant]
+    Prune --> Compress[Compress Older Turns]
+    Compress --> Validate[Validate Summaries]
+    Validate --> Budget[Enforce Budget + Ordering]
+    Budget --> Out[Stabilized Context for Next Turn]
+```
+
 ---
 
 ## Why It Matters

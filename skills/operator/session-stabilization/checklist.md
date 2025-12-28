@@ -17,6 +17,15 @@ last_reviewed: 2025-12-26
 
 Condensed execution aid. Use only when the full SKILL is understood.
 
+```mermaid
+flowchart TD
+    Pre[Preconditions] --> Assess[Assess Budget + Redundancy]
+    Assess --> Refresh[Refresh Summaries]
+    Refresh --> Validate[Validate/Expire]
+    Validate --> Order[Ordering + Budget Gate]
+    Order --> Out[Emit Stabilized Context]
+```
+
 ---
 
 ## Preconditions

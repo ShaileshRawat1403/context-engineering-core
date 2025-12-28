@@ -22,6 +22,13 @@ Each skill exists in two forms:
 - **Operator skill**: canonical, human-executed
 - **Agent skill**: derived, constrained, pasteable
 
+```mermaid
+flowchart LR
+    OP[Operator Skill] -->|derives| AG[Agent Skill]
+    OP -->|exports| KT[Gate/Kit]
+    OP -->|demonstrates| SC[Scripts]
+```
+
 Operator skills define truth.  
 Agent skills inherit constraints.
 

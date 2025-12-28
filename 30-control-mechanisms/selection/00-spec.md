@@ -128,6 +128,14 @@ flowchart LR
 
 If reasoning sees unselected content, selection is bypassed.
 
+```mermaid
+flowchart TD
+    Input[Inputs: user/tool/retrieval/memory] --> Gate[Selection Gate]
+    Gate -->|admit| Context[Context Assembly]
+    Gate -->|reject| Excl[Excluded/Quarantine]
+    Context --> Controls[Ordering/Masking/Compression]
+```
+
 ---
 
 ## Selection Modes

@@ -17,6 +17,16 @@ last_reviewed: 2025-12-26
 Canonical definition: `skills/operator/context-triage/SKILL.md`  
 If instructions conflict, the operator skill prevails.
 
+```mermaid
+flowchart TD
+    Pre[Preconditions] --> Norm[Normalize Inputs]
+    Norm --> Filter[Scope Filter]
+    Filter --> Order[Authority Ordering]
+    Order --> Budget[Admit Within Budget]
+    Budget --> Out[Emit Context + Exclusion Log]
+    Budget --> Esc[Stop/Escalate on conflict]
+```
+
 ---
 
 ## Scope and Authority

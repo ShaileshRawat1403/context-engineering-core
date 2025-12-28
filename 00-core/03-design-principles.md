@@ -16,6 +16,15 @@ related_failures: []
 These principles govern every artifact in `context-engineering-core`.
 They exist to prevent drift, ambiguity, and accidental scope creep.
 
+```mermaid
+flowchart TD
+    P[Primitives] --> F[Failure Mechanics]
+    F --> C[Controls]
+    C --> M[System Manifestations]
+    M --> G[Governance]
+    G -->|audits| P
+```
+
 ---
 
 ## 1) Spec-First

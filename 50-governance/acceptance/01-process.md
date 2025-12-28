@@ -16,6 +16,17 @@ Acceptance is the **formal decision** to allow a spec, control, or system into g
 
 It requires evidence, explicit authority, and recorded boundaries.
 
+```mermaid
+flowchart TD
+    P[Preconditions Met?] -->|no| S1[Defer]
+    P -->|yes| E[Evidence Collected]
+    E --> R[Reviewer Verification]
+    R --> A[Approver Decision]
+    A -->|accept| L[Log Scope + Expiry]
+    A -->|reject| Rem[Remediation Plan]
+    A -->|defer| S2[Rework]
+```
+
 ---
 
 ## Preconditions

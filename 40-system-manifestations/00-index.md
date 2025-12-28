@@ -41,3 +41,12 @@ Current coverage: index + patterns per domain. Deeper checks/examples can be add
 4. Declare governance hooks (ownership, acceptance, escalation) per domain.
 
 These docs are for integration design, not new controls.
+
+```mermaid
+flowchart TD
+    P[Primitives] --> F[Failure Mechanics]
+    F --> C[Controls]
+    C --> M[Manifestations: memory/tools/agents/evaluation]
+    C --> G[Governance]
+    G --> M
+```

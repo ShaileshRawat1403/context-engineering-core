@@ -20,3 +20,16 @@ Controls without governance are optional; governance makes them binding.
 This section anchors review, acceptance, escalation, and accountability for all context-engineered systems.
 
 Current coverage: index + process docs per subdomain. Additional checks/examples can be added if governance expands.
+
+```mermaid
+flowchart TD
+    S[Specs & Controls]
+    R[Review]
+    A[Acceptance]
+    Esc[Escalation]
+    Acct[Accountability]
+
+    S --> R --> A --> Acct
+    R -->|issues| Esc --> Acct
+    A -->|with evidence| Acct
+```

@@ -87,6 +87,13 @@ Ordering may apply to:
 
 Ordering must declare **what is being ordered and why**.
 
+```mermaid
+flowchart LR
+    A[Admitted Items] --> Ord[Ordering Rules]
+    Ord --> Pri[Priority List]
+    Pri --> Consumed[Model Consumption]
+```
+
 ---
 
 ## Ordering Axes

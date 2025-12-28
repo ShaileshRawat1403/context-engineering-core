@@ -8,6 +8,13 @@ last_updated: "2025-01-01"
 
 Recorded from local runs with current scripts (heuristic).
 
+```mermaid
+flowchart TD
+    Budget[Budget Report] --> Summary[Utilization + Order]
+    Reorder[Reorder Script] --> Summary
+    Dupes[Duplicate Scan] --> Summary
+```
+
 ## Context Budget Report
 
 - Artifacts: 6

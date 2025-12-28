@@ -18,4 +18,12 @@ This section will define:
 - how decisions and trade-offs are recorded
 - how to trace responsibility for failures and remediation
 
+```mermaid
+flowchart TD
+    O[Owner] --> D[Decision]
+    D --> L[Logged with Rationale]
+    L --> A[Accountability Map]
+    A --> R[Remediation on Failure]
+```
+
 Accountability documents ensure that governance is enforceable, not advisory.
