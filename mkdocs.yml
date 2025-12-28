@@ -1,0 +1,84 @@
+site_name: Context Engineering Core
+site_url: ""
+repo_url: "https://github.com/ShaileshRawat1403/context-engineering-core"
+edit_uri: ""
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - toc.integrate
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.emoji
+  - pymdownx.tasklist
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.arithmatex
+  - pymdownx.magiclink
+  - pymdownx.keys
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.saneheaders
+  - pymdownx.snippets
+  - md_mermaid
+nav:
+  - Home: README.md
+  - Core:
+      - Index: 00-core/00-index.md
+      - Design Principles: 00-core/03-design-principles.md
+      - Conformance: 00-core/04-conformance.md
+  - Primitives:
+      - Index: 10-primitives/00-index.md
+      - Attention: 10-primitives/attention/00-spec.md
+      - Boundaries: 10-primitives/boundaries/00-spec.md
+      - Scope: 10-primitives/scope/00-spec.md
+      - Lifetimes: 10-primitives/lifetimes/00-spec.md
+      - Signal vs Noise: 10-primitives/signal-vs-noise/00-spec.md
+      - Composition: 10-primitives/99-how-primitives-compose.md
+  - Failure Mechanics:
+      - Index: 20-failure-mechanics/00-index.md
+      - Degradation: 20-failure-mechanics/degradation/00-spec.md
+      - Drift: 20-failure-mechanics/drift/00-spec.md
+      - Interference: 20-failure-mechanics/interference/00-spec.md
+      - Poisoning: 20-failure-mechanics/poisoning/00-spec.md
+  - Control Mechanisms:
+      - Index: 30-control-mechanisms/00-index.md
+      - Compression: 30-control-mechanisms/compression/00-spec.md
+      - Selection: 30-control-mechanisms/selection/00-spec.md
+      - Masking: 30-control-mechanisms/masking/00-spec.md
+      - Ordering: 30-control-mechanisms/ordering/00-spec.md
+      - Validation: 30-control-mechanisms/validation/00-spec.md
+      - Isolation: 30-control-mechanisms/isolation/00-spec.md
+  - System Manifestations:
+      - Index: 40-system-manifestations/00-index.md
+      - Memory: 40-system-manifestations/memory/00-index.md
+      - Tools: 40-system-manifestations/tools/00-index.md
+      - Agents: 40-system-manifestations/agents/00-index.md
+      - Evaluation: 40-system-manifestations/evaluation/00-index.md
+  - Governance:
+      - Index: 50-governance/00-index.md
+      - Review: 50-governance/review/00-index.md
+      - Acceptance: 50-governance/acceptance/00-index.md
+      - Escalation: 50-governance/escalation/00-index.md
+      - Accountability: 50-governance/accountability/00-index.md
+  - Skills:
+      - Overview: skills/README.md
+      - Index: skills/index.md
+      - Operator Skills: skills/operator/context-triage/SKILL.md
+      - Agent Skills: skills/agent/context-triage.md
+      - Kits: skills/kits/README.md
+  - Examples:
+      - Index: examples/00-index.md
+      - Minimal RAG Context Gate: examples/minimal-rag-context-gate/README.md
+      - Long Session Stability Harness: examples/long-session-stability-harness/README.md
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
