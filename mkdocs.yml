@@ -30,7 +30,6 @@ markdown_extensions:
       smart_enable: all
   - pymdownx.saneheaders
   - pymdownx.snippets
-  - md_mermaid
 nav:
   - Home: README.md
   - Core:
