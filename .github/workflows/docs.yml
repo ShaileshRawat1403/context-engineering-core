@@ -51,11 +51,6 @@ jobs:
               if dst.exists():
                   shutil.rmtree(dst)
               shutil.copytree(src, dst)
-          # ensure JS assets are present
-          (doc_dir / "js").mkdir(exist_ok=True)
-          src_js = root / "docs" / "js" / "mermaid-init.js"
-          if src_js.exists():
-              shutil.copyfile(src_js, doc_dir / "js" / "mermaid-init.js")
           PY
       - name: Build site
         run: mkdocs build --clean
