@@ -2,6 +2,7 @@ site_name: Context Engineering Core
 site_url: ""
 repo_url: "https://github.com/ShaileshRawat1403/context-engineering-core"
 edit_uri: ""
+docs_dir: "."
 theme:
   name: material
   features:
