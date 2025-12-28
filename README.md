@@ -4,6 +4,8 @@ This repository defines **context engineering** as a discipline.
 
 It is a **specification-first, execution-oriented** reference for designing AI systems that depend on large language models, agent architectures, and human oversight.
 
+Maintained by **Shailesh Rawat (sans_serif_sentiments)**.
+
 ```mermaid
 flowchart TD
     A[Primitives] --> B[Failure Mechanics]

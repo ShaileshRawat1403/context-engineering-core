@@ -1,4 +1,6 @@
 site_name: Context Engineering Core
+site_author: "Shailesh Rawat (sans_serif_sentiments)"
+site_description: "Specification-first, execution-oriented context engineering playbook."
 site_url: ""
 repo_url: "https://github.com/ShaileshRawat1403/context-engineering-core"
 edit_uri: ""
@@ -86,6 +88,12 @@ nav:
       - Long Session Stability Harness: examples/long-session-stability-harness/README.md
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+  - css/accessibility.css
 extra_javascript:
   - https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js
   - js/mermaid-init.js
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ShaileshRawat1403
+      name: Shailesh Rawat (sans_serif_sentiments)
