@@ -1,4 +1,4 @@
-site_name: Context Engineering Core
+site_name: "Context Engineering Core — Shailesh Rawat (sans_serif_sentiments)"
 site_author: "Shailesh Rawat (sans_serif_sentiments)"
 site_description: "Specification-first, execution-oriented context engineering playbook."
 site_url: ""
@@ -11,6 +11,8 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
     - toc.integrate
     - content.code.copy
   icon:
