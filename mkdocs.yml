@@ -5,6 +5,8 @@ site_url: ""
 repo_url: "https://github.com/ShaileshRawat1403/context-engineering-core"
 edit_uri: ""
 docs_dir: docs
+repo_name: "GitHub"
+repo_icon: fontawesome/brands/github
 theme:
   name: material
   font: false  # use system fonts for maximum visibility/accessibility
