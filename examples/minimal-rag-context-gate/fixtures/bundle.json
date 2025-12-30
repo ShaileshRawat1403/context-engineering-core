@@ -1,0 +1,52 @@
+{
+  "artifacts": [
+    {
+      "id": "sys",
+      "kind": "system",
+      "authority": "system",
+      "priority": 10,
+      "title": "System Instruction",
+      "content": "You are a focused retrieval assistant. Always cite sources."
+    },
+    {
+      "id": "task",
+      "kind": "task",
+      "authority": "developer",
+      "priority": 8,
+      "title": "Task",
+      "content": "Answer the user's question based only on retrieved documents."
+    },
+    {
+      "id": "doc1",
+      "kind": "document",
+      "authority": "tool",
+      "priority": 5,
+      "title": "Doc 1",
+      "content": "The capital of France is Paris. It is known for the Eiffel Tower."
+    },
+    {
+      "id": "doc2",
+      "kind": "document",
+      "authority": "tool",
+      "priority": 4,
+      "title": "Doc 2",
+      "content": "France uses the Euro as its currency. The capital city is Paris."
+    },
+    {
+      "id": "doc3",
+      "kind": "document",
+      "authority": "tool",
+      "priority": 1,
+      "title": "Doc 3",
+      "content": "This is a verbose marketing paragraph with little relevant information about travel offers."
+    },
+    {
+      "id": "user",
+      "kind": "message",
+      "authority": "user",
+      "priority": 2,
+      "title": "User Question",
+      "content": "What is the capital of France?"
+    }
+  ]
+}

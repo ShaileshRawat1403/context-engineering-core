@@ -1,0 +1,5 @@
+flowchart TD
+    Q[User Query] --> R[Retriever]
+    R --> G[Gate: selection + budget + ordering]
+    G --> A[Context Assembler]
+    A --> LLM[LLM Generation]

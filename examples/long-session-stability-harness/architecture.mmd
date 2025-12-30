@@ -1,0 +1,6 @@
+flowchart TD
+    Hist[Long History] --> Prune[Prune/Compress]
+    Prune --> Validate[Validate + Mask PII]
+    Validate --> Assemble[Stabilized Context]
+    Assemble --> LLM[LLM Execution]
+    Assemble --> Tests[Regression Tests]
