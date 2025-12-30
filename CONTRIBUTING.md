@@ -32,6 +32,27 @@ We welcome ideas to improve the project. Please submit an issue with:
 - Why you believe it would be valuable.
 - Any potential drawbacks or trade-offs.
 
+### Contributing Real-World Experience: Failure Signals and Trade-offs
+
+This repository thrives on practical insights. We particularly welcome contributions that document real-world experiences related to:
+
+-   **Failure Signals:** Concrete observations, logs, or scenarios where context-engineered systems exhibited unexpected behavior, degradation, or outright failure. Detail the context, the observed symptoms, and if possible, the hypothesized root cause.
+-   **Trade-offs:** Documented decisions where a specific control mechanism was chosen over others, detailing the benefits gained and the costs/downsides incurred (e.g., increased latency for improved isolation, reduced fluency for enhanced safety). Provide the problem context and the rationale for the chosen trade-off.
+
+Please submit these as issues or pull requests, adhering to the canonical structure where applicable (e.g., adding to `01-failure-signals.md` or `02-trade-offs.md` for existing concepts, or proposing new ones). Your practical experience is invaluable for building a robust, evidence-based discipline.
+
+### Example: Local Checks Before a PR
+
+Run the lightweight checks in this order to catch regressions early:
+
+```bash
+make test          # fast pytest suite
+make build         # mkdocs strict build to catch nav or content issues
+make diagrams      # optional: render .mmd diagrams if you touched them
+```
+
+If you add or modify a concept example, follow the canonical structure (update the corresponding `03-examples.md` and reference at least one failure signal and one control trade-off) so the material stays actionable.
+
 ### Submitting Pull Requests
 
 1. Fork the repository and create your branch from `main`.

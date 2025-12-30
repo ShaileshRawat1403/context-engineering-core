@@ -295,14 +295,123 @@ flowchart LR
 
 ### Outcome
 
-- constraints preserved
-- compression remains effective
-- safety restored
+    - constraints preserved
+    - compression remains effective
+    - safety restored
+
+---
+
+### Example 6: Generic Text Compression via Summarization (Pseudo-code)
+
+**Context**
+A long document (e.g., a meeting transcript, a detailed report, or an extensive chat history) needs to be included in an agent's context, but its full length exceeds the attention budget. The goal is to reduce its size while retaining the most critical information.
+
+**Failure**
+- Long texts consume too many tokens, displacing other important context elements.
+- The model spends too much attention on verbose details instead of core facts.
+- Context window limits are hit, leading to truncation and loss of critical information.
+
+**Change (Conceptual Pseudo-code for Compression)**
+
+```python
+from typing import List, Dict, Any
+
+class LLMService:
+    """Mock LLM service for summarization."""
+    def summarize(self, text: str, max_length: int = 200, style: str = "concise") -> str:
+        # In a real scenario, this would call an actual LLM API.
+        # This mock simply truncates or returns a placeholder summary.
+        if len(text) > max_length * 2: # Arbitrary threshold for "long" text
+            return f"[SUMMARY_CONCISE_{style}]: " + text[:max_length] + "..."
+        return text
+
+def apply_compression(
+    text_to_compress: str,
+    compression_mode: str, # e.g., "summarize_concise", "extract_keywords", "truncate_end"
+    max_tokens: int,
+    llm_service: LLMService # Dependency for summarization
+) -> str:
+    """
+    Applies a specified compression mode to a given text.
+    """
+    # Estimate current tokens (simplified)
+    current_tokens = len(text_to_compress.split())
+
+    if current_tokens <= max_tokens:
+        return text_to_compress # No compression needed
+
+    if compression_mode == "summarize_concise":
+        # Target length for summary based on max_tokens budget
+        # This is a heuristic; actual token counting for target length is complex
+        target_summary_tokens = int(max_tokens * 0.8) # Leave some buffer
+        print(f"DEBUG: Summarizing text (current tokens: {current_tokens}) to target {target_summary_tokens} tokens.")
+        return llm_service.summarize(text_to_compress, max_length=target_summary_tokens, style="concise")
+    elif compression_mode == "extract_keywords":
+        # In a real system, this would use an LLM or keyword extraction algorithm
+        print(f"DEBUG: Extracting keywords (current tokens: {current_tokens}) to fit budget.")
+        return llm_service.summarize(text_to_compress, max_length=max_tokens, style="keywords")
+    elif compression_mode == "truncate_end":
+        # Simple truncation: keep from the beginning
+        print(f"DEBUG: Truncating text (current tokens: {current_tokens}) to fit budget.")
+        words = text_to_compress.split()
+        return " ".join(words[:max_tokens]) # Truncate to max_tokens words
+    else:
+        print(f"WARNING: Unknown compression mode: {compression_mode}. No compression applied.")
+        return text_to_compress
+
+# --- Usage Example ---
+mock_llm = LLMService()
+
+long_chat_history = (
+    "User: I need help with my order #12345. It was placed on June 1st and hasn't shipped. " * 50 +
+    "Agent: I see your order. Let me check the status. " * 50 +
+    "User: I'm really frustrated. I need this by Friday. " * 50 +
+    "Agent: I understand your frustration. I'm escalating this. " * 50
+) # Simulate a very long chat history
+
+max_context_budget = 500 # tokens
+
+# Apply concise summarization
+compressed_history_summary = apply_compression(
+    long_chat_history,
+    "summarize_concise",
+    max_context_budget,
+    mock_llm
+)
+print("\n--- Compressed History (Summarized) ---")
+print(compressed_history_summary)
+
+# Apply truncation
+compressed_history_truncated = apply_compression(
+    long_chat_history,
+    "truncate_end",
+    max_context_budget,
+    mock_llm
+)
+print("\n--- Compressed History (Truncated) ---")
+print(compressed_history_truncated)
+
+# No compression needed
+short_text = "This is a short message."
+compressed_short_text = apply_compression(
+    short_text,
+    "summarize_concise",
+    max_context_budget,
+    mock_llm
+)
+print("\n--- Short Text (No Compression) ---")
+print(compressed_short_text)
+```
+
+**Outcome**
+- Provides a programmatic way to reduce the token count of verbose context elements.
+- Illustrates different compression strategies (summarization, truncation) and their conceptual application.
+- Helps manage the attention budget by ensuring context elements fit within defined limits.
+- Highlights that compression involves trade-offs, where details might be lost for the sake of brevity.
 
 ---
 
 ## Example Invariants
-
 Across all examples:
 
 - compression stabilizes long contexts

@@ -279,14 +279,109 @@ flowchart TD
 
 ### Outcome
 
-- reduced poisoning risk
-- authority preserved
-- predictable behavior
+    - reduced poisoning risk
+    - authority preserved
+    - predictable behavior
+
+---
+
+### Example 6: Simple Content Masking (Pseudo-code)
+
+**Context**
+A multi-stage agent system processes a user request. In the initial "Planning" phase, the agent needs access to detailed internal configuration. In the subsequent "Execution" phase, this configuration should be masked to prevent the agent from re-planning or being influenced by internal details not relevant to task execution.
+
+**Failure**
+- Agent attempts to modify internal config during execution.
+- Agent gets distracted by configuration details, leading to suboptimal or incorrect execution.
+
+**Change (Conceptual Pseudo-code for Masking)**
+
+```python
+def apply_mask(content: str, phase: str, role: str) -> str:
+    """
+    Applies a masking rule to content based on the current phase and role.
+    This is a simplified example; real masking might involve token-level
+    manipulation, context window partitioning, or conditional prompting.
+    """
+    internal_config_prefix = "[INTERNAL_CONFIG_DETAILS]"
+    detailed_planning_notes_prefix = "[DETAILED_PLANNING_NOTES]"
+    sensitive_data_prefix = "[SENSITIVE_USER_DATA]"
+
+    masked_content = content
+
+    if phase == "execution":
+        # Mask internal config during execution
+        if internal_config_prefix in masked_content:
+            masked_content = masked_content.replace(internal_config_prefix, "[CONFIG_MASKED_FOR_EXECUTION]")
+            print(f"DEBUG: Masked internal config for {phase} phase.")
+
+        # Mask detailed planning notes once plan is finalized
+        if detailed_planning_notes_prefix in masked_content:
+            masked_content = masked_content.replace(detailed_planning_notes_prefix, "[PLANNING_NOTES_MASKED]")
+            print(f"DEBUG: Masked detailed planning notes for {phase} phase.")
+
+    if role == "public_facing_response_generator":
+        # Mask any sensitive data for public responses
+        if sensitive_data_prefix in masked_content:
+            masked_content = masked_content.replace(sensitive_data_prefix, "[SENSITIVE_DATA_REDACTED]")
+            print(f"DEBUG: Masked sensitive data for {role} role.")
+
+    return masked_content
+
+# --- Usage Example ---
+full_context_planning = """
+[INTERNAL_CONFIG_DETAILS]
+DB_ENDPOINT=prod.db.example.com
+API_KEY=sk-xyz-123
+[/INTERNAL_CONFIG_DETAILS]
+
+[DETAILED_PLANNING_NOTES]
+Option A: Use tool X, then tool Y. Risk: high latency.
+Option B: Use tool Z directly. Risk: less accurate.
+Chosen: Option A.
+[/DETAILED_PLANNING_NOTES]
+
+User query: "Summarize this article and email it to John."
+"""
+
+full_context_execution = """
+[INTERNAL_CONFIG_DETAILS]
+DB_ENDPOINT=prod.db.example.com
+API_KEY=sk-xyz-123
+[/INTERNAL_CONFIG_DETAILS]
+
+Chosen plan: Summarize using tool X, then email using tool Y.
+User query: "Summarize this article and email it to John."
+[SENSITIVE_USER_DATA]
+John's Email: john.doe@example.com
+[/SENSITIVE_USER_DATA]
+"""
+
+# Context for Planning Phase (full visibility)
+planning_context = apply_mask(full_context_planning, phase="planning", role="planner")
+print("\n--- Context for Planner ---")
+print(planning_context)
+
+# Context for Execution Phase (config and planning notes masked)
+execution_context = apply_mask(full_context_execution, phase="execution", role="executor")
+print("\n--- Context for Executor ---")
+print(execution_context)
+
+# Context for Public-Facing Response (sensitive data masked)
+public_response_context = apply_mask(execution_context, phase="execution", role="public_facing_response_generator")
+print("\n--- Context for Public Response Generator ---")
+print(public_response_context)
+```
+
+**Outcome**
+- Prevents internal configuration and planning details from influencing an agent in the execution phase.
+- Reduces the risk of agents attempting to modify restricted parameters or getting sidetracked by irrelevant information.
+- Ensures sensitive information is redacted when context is prepared for roles that do not require it or for public output.
+- Reinforces boundaries by controlling visibility dynamically based on operational phase and agent role.
 
 ---
 
 ## Example Invariants
-
 Across all examples:
 
 - masking restricts influence, not existence

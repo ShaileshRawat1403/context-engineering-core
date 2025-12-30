@@ -109,12 +109,78 @@ Short safety constraints appear alongside long background.
 
 **Outcome**  
 - Constraint honored consistently.  
-- Background still accessible but non-dominant.
+    - Background still accessible but non-dominant.
+
+---
+
+## Example 5: Explicit Attention Budgeting (Pseudo-code)
+
+**Context**
+A multi-turn agent conversation where each turn adds to the context, and critical system instructions must always be prioritized.
+
+**Failure**
+- System instructions are occasionally truncated or pushed out of the active context window by lengthy user interactions or tool outputs.
+- Performance degrades due to models processing excessively long contexts, or worse, making decisions based on incomplete instructions.
+
+**Change (Conceptual Pseudo-code)**
+```python
+def assemble_context(
+    system_instructions: list[str],
+    conversation_history: list[str],
+    tool_outputs: list[str],
+    max_attention_budget: int = 4000 # in tokens, conceptual
+) -> str:
+    assembled_context = []
+    current_budget_used = 0
+
+    # 1. Prioritize and reserve budget for system instructions (non-negotiable)
+    for instruction in system_instructions:
+        tokens = estimate_tokens(instruction) # hypothetical token estimation
+        if current_budget_used + tokens <= max_attention_budget:
+            assembled_context.append(instruction)
+            current_budget_used += tokens
+        else:
+            # Critical failure: system instructions exceed budget
+            raise ValueError("System instructions exceed maximum attention budget.")
+
+    # 2. Add recent conversation history, trimming if necessary (high priority)
+    # Process in reverse chronological order
+    for turn in reversed(conversation_history):
+        tokens = estimate_tokens(turn)
+        if current_budget_used + tokens <= max_attention_budget:
+            assembled_context.insert(len(system_instructions), turn) # Insert after system instructions
+            current_budget_used += tokens
+        else:
+            print(f"Warning: Truncating conversation history to fit budget. Dropped: {turn[:50]}...")
+            # Optionally, compress older turns here instead of dropping
+            break # Stop adding older turns if budget is hit
+
+    # 3. Add recent tool outputs, trimming if necessary (medium priority)
+    # Process in reverse chronological order
+    for output in reversed(tool_outputs):
+        tokens = estimate_tokens(output)
+        if current_budget_used + tokens <= max_attention_budget:
+            assembled_context.insert(len(system_instructions), output) # Insert after system instructions and history
+            current_budget_used += tokens
+        else:
+            print(f"Warning: Truncating tool outputs to fit budget. Dropped: {output[:50]}...")
+            break
+
+    # Reorder if necessary to maintain chronological flow within sections
+    # (e.g., system instructions always first, then history oldest to newest, then tools)
+    # This pseudo-code simplifies insertion; actual implementation would manage ordering.
+
+    return "\n".join(assembled_context)
+
+# Outcome
+- Ensures critical system instructions are always present.
+- Manages context growth to prevent exceeding the attention budget.
+- Provides explicit points where context is managed, allowing for clear trade-offs (e.g., how much history to keep vs. how many tool outputs).
+- Makes the "constrained system resource" explicit in the code.
 
 ---
 
 ## Example Invariants
-
 - Reducing context often improves outcomes when attention is failing.  
 - Position and verbosity biases must be countered explicitly.  
 - If budget is unknown, failures are expected.  
