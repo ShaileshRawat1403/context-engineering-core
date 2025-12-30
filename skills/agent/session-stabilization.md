@@ -115,6 +115,30 @@ If any check fails, halt and report failure.
 
 ---
 
+## Example Execution (Agent)
+
+**Setup**
+- `context_budget`: 800 tokens (heuristic estimate).
+- `authority_model`: system > policy > tool > retrieval > user.
+- `scope_definition`: `task=resolve_ticket`, current phase = `analysis`.
+- Inputs include 12 turns (last 4 are near-duplicates), 2 tool logs (verbose), and 1 stale summary (expired).
+
+**Actions the agent performs**
+- Deduplicates the last 4 turns; drops 2 near-duplicates.
+- Compresses turns 5–8 into deltas; keeps turns 9–12 verbatim.
+- Masks tool logs to `{result,status,error}` fields only.
+- Expires the stale summary; refreshes a current summary with delta content and validates provenance/scope.
+- Reorders to `constraints → task/phase → user/tool/retrieval → summaries`.
+- Halts if budget would be exceeded or if summary validation fails (not triggered in this run).
+
+**Expected outputs**
+- `stabilized_context[]` (within 800 tokens) with explicit ordering and masked tool entries.
+- `exclusion_log[]` noting dropped duplicates and expired summary.
+- `summary_log[]` recording refreshed summary + validation status.
+- Budget report showing ≤800 tokens used; constraints remain first.
+
+---
+
 ## Stop and Escalation
 
 Stop and escalate if:

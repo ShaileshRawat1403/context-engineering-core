@@ -6,7 +6,6 @@ repo_url: "https://github.com/ShaileshRawat1403/context-engineering-core"
 edit_uri: ""
 docs_dir: docs
 repo_name: "GitHub"
-repo_icon: fontawesome/brands/github
 theme:
   name: material
   font: false  # use system fonts for maximum visibility/accessibility
@@ -19,6 +18,8 @@ theme:
     - navigation.expand
     - toc.integrate
     - content.code.copy
+    - content.action.edit # Added for UX - edit button
+    - navigation.path # Added for UX/accessibility - breadcrumbs
   icon:
     repo: fontawesome/brands/github
 markdown_extensions:
@@ -48,6 +49,7 @@ nav:
       - Index: 00-core/00-index.md
       - Design Principles: 00-core/03-design-principles.md
       - Conformance: 00-core/04-conformance.md
+  - Glossary: 00-core/03-glossary.md
   - Primitives:
       - Index: 10-primitives/00-index.md
       - Attention: 10-primitives/attention/00-spec.md
@@ -83,7 +85,7 @@ nav:
       - Escalation: 50-governance/escalation/00-index.md
       - Accountability: 50-governance/accountability/00-index.md
   - Skills:
-      - Overview: skills/README.md
+      - Overview: skills/overview.md
       - Index: skills/index.md
       - Operator Skills: skills/operator/context-triage/SKILL.md
       - Agent Skills: skills/agent/context-triage.md
@@ -92,9 +94,17 @@ nav:
       - Index: examples/00-index.md
       - Minimal RAG Context Gate: examples/minimal-rag-context-gate/README.md
       - Long Session Stability Harness: examples/long-session-stability-harness/README.md
+      - Case Studies:
+          - Overview: examples/case-studies/README.md
+          - Documentation Assistant: examples/case-studies/documentation-assistant/README.md
+          - Incident Response Agent: examples/case-studies/incident-response-agent/README.md
+      - Patterns:
+          - Overview: examples/patterns/README.md
+          - Retrieval & RAG: examples/patterns/retrieval-and-rag.md
+          - Long-Running Context: examples/patterns/long-running-context.md
+          - Multi-Agent Orchestration: examples/patterns/multi-agent-orchestration.md
+          - Tool-Using Agent: examples/patterns/tool-using-agent.md
 extra_css:
-  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
-  - css/accessibility.css
 extra_javascript:
   - https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js
   - js/mermaid-init.js
