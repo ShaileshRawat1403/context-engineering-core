@@ -44,7 +44,8 @@ jobs:
           # selected directories
           for sub in [
               "00-core","10-primitives","20-failure-mechanics","30-control-mechanisms",
-              "40-system-manifestations","50-governance","examples","skills","checklists","contracts"
+              "40-system-manifestations","50-governance","examples","skills","checklists","contracts",
+              "glossary"
           ]:
               src = root / sub
               dst = doc_dir / sub
