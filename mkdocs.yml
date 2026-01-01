@@ -49,7 +49,7 @@ nav:
       - Index: 00-core/00-index.md
       - Design Principles: 00-core/03-design-principles.md
       - Conformance: 00-core/04-conformance.md
-  - Glossary: 00-core/03-glossary.md
+  - Glossary: glossary/index.md
   - Primitives:
       - Index: 10-primitives/00-index.md
       - Attention: 10-primitives/attention/00-spec.md
