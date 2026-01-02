@@ -334,3 +334,73 @@ graph TD
 This glossary is **stable**.
 
 Additions are permitted only when a new concept cannot be expressed using existing terms.
+
+
+## Failure Mechanics
+
+### Selection (control)
+
+Admitting or excluding context items based on authority, relevance, freshness, and provenance under a budget.
+
+---
+
+### Ordering (control)
+
+Deliberate placement of context to preserve authority and salience; constraints first, then task, then references.
+
+---
+
+### Masking (control)
+
+Redaction or removal of sensitive/irrelevant fields (e.g., tool logs) before context admission.
+
+---
+
+### Compression (control)
+
+Reducing size while preserving required signal and provenance; non-compressible constraints stay intact.
+
+---
+
+### Validation (control)
+
+Gate that checks provenance, scope, authority, and freshness before admission or persistence.
+
+---
+
+### Isolation (control)
+
+Separating tasks/roles/tenants/tools and their memories to prevent cross-domain influence.
+
+---
+
+### Authority Model
+
+Explicit precedence of instructions and sources (system > developer > task > user > references > tools).
+
+---
+
+### Provenance
+
+Trace of where a context element came from; required for validation, trust, and rollback.
+
+---
+
+### Budget
+
+Declared limit on attention/tokens for a task; governs selection, compression, ordering.
+
+---
+
+### TTL (Time To Live)
+
+Lifetime bound after which a context element must expire or be refreshed.
+
+---
+
+### Handoff Artifact
+
+Structured output passed between scoped roles/tasks (result/status/error), not the upstream prompt.
+
+---
+
