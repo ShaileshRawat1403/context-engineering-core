@@ -27,3 +27,14 @@ flowchart TD
 ```
 
 Accountability documents ensure that governance is enforceable, not advisory.
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: authority/ownership map; logging/audit requirements; decision records; escalation history
+- **Steps**: record decisions with owners and evidence; tie actions to authority; maintain audit log; review periodic accountability reports
+- **Checks**: decisions traceable; audit log intact; owners identifiable; escalations resolved/recorded
+- **Stop/escate**: ownership unclear; audit log incomplete; decisions cannot be traced
+
+---

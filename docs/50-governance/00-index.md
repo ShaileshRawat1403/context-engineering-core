@@ -33,3 +33,14 @@ flowchart TD
     R -->|issues| Esc --> Acct
     A -->|with evidence| Acct
 ```
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: authority model; decision rights; evidence requirements; escalation paths; control verification hooks
+- **Steps**: define owners and reviewers; attach evidence requirements to controls; set acceptance criteria; define when to escalate; log decisions
+- **Checks**: owners assigned; evidence captured; acceptance criteria met; escalation triggers defined; decisions recorded
+- **Stop/escate**: no owner; evidence missing; acceptance unclear; escalation path undefined
+
+---

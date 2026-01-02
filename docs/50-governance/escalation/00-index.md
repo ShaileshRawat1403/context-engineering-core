@@ -27,3 +27,14 @@ flowchart TD
 ```
 
 Escalation documents enforce stop conditions; they prevent silent drift past governance boundaries.
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: escalation triggers; severity/risk matrix; contacts/roles; stop conditions; evidence collected
+- **Steps**: detect trigger; stop risky actions; notify roles per severity; hand off with evidence; track resolution
+- **Checks**: trigger matched; notifications sent; actions stopped/paused; ownership transferred
+- **Stop/escate**: trigger ambiguous; contact unknown; missing evidence for handoff
+
+---

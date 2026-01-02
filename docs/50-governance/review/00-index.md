@@ -28,3 +28,14 @@ flowchart TD
 ```
 
 Review documents make explicit the authority and criteria for acceptance. They do not add new controls.
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: change scope; authority model; checklists/controls touched; evidence to review; reviewers/approvers
+- **Steps**: identify impacted controls; collect evidence; run review checklist; log findings; require approval before acceptance
+- **Checks**: reviewer assigned; evidence complete; blockers documented; approval recorded
+- **Stop/escate**: scope unclear; missing evidence; reviewer conflict of interest
+
+---
