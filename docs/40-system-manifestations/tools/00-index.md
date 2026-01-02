@@ -58,3 +58,14 @@ Controls: validation, isolation, masking, selection, compression.
 - Tool allowlist/denylist ownership
 - Approval for new tools or schema changes
 - Escalation on validation failure or trust boundary crossing
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: tool schemas; trust level; allowed channels; validation rules; masking policy; isolation/sandbox settings
+- **Steps**: classify tool trust; sandbox untrusted tools; validate outputs to schema; mask logs to result/status/error; separate instruction vs data channels; admit only validated fields into reasoning
+- **Checks**: provenance recorded; schema validation passed; masking applied; untrusted tools isolated; constraints still precede tool guidance
+- **Stop/escate**: schema/trust unknown; validation failed but admission requested; tool output would override constraints
+
+---

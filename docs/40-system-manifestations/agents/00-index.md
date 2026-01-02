@@ -63,3 +63,14 @@ Controls: masking, selection, ordering, isolation, validation.
 - Authority model for orchestrator vs agents
 - Escalation when arbitration fails
 - Acceptance of new agent roles or behaviors
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: authority model; allowed/forbidden actions; scope per role; tool/memory access policy; logging/reporting requirements
+- **Steps**: bind agent to role/scope; restrict actions and tool access; require validation gates; log actions/outputs; separate channels (instruction/data/tools)
+- **Checks**: actions within allowlist; authority order preserved; outputs validated; isolation boundaries intact
+- **Stop/escate**: scope/role ambiguous; required validation unavailable; privilege escalation detected
+
+---

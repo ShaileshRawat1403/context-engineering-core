@@ -58,3 +58,14 @@ Controls: masking, scope, validation, selection (of tests), ordering (of evaluat
 - Ownership of rubrics and benchmarks
 - Approval for metric changes
 - Escalation when metrics conflict with outcomes or intent
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: evaluation rubric; ground truth or references; sample selection; isolation rules; metrics and thresholds
+- **Steps**: select samples representative of risk; isolate eval context from training/runtime; apply rubric; capture metrics and errors; log provenance
+- **Checks**: rubric applied; samples traced; no leakage between eval and runtime/training; thresholds/alerts configured
+- **Stop/escate**: references missing; isolation not guaranteed; rubric/criteria unclear
+
+---

@@ -50,3 +50,14 @@ flowchart TD
     C --> G[Governance]
     G --> M
 ```
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: manifestation type (memory/tools/agents/evaluation); mapped primitives and controls; authority and scope model; isolation/validation policies
+- **Steps**: map the manifestation to primitives/failures; choose controls (selection/ordering/masking/validation/isolation) per risk; define inputs/outputs/contracts; set monitoring hooks and escalation
+- **Checks**: primitives mapped; controls declared; contracts and trust boundaries defined; monitoring/escalation in place
+- **Stop/escate**: no authority/scope model; unclear trust boundary; controls would be bypassed
+
+---

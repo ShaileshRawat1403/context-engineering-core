@@ -59,3 +59,14 @@ Controls: validation, isolation, masking (visibility), selection (what can be pe
 - Owner of memory schema and promotion rules
 - Acceptance criteria for persistent changes
 - Escalation triggers (validation failure, provenance missing, rollback required)
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: memory policy (lifetime, scope, authority); validation rules; retention/rollback rules; provenance
+- **Steps**: tag artifacts with scope/lifetime; validate before persistence; isolate memories per tenant/task; implement expiry/refresh; log promotions/demotions
+- **Checks**: no expired/stale items admitted; provenance retained; isolation enforced; rollbacks possible; authority preserved
+- **Stop/escate**: provenance missing; policy unclear; persistence would violate scope/lifetime
+
+---
