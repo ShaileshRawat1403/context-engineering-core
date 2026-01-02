@@ -165,6 +165,18 @@ It defines the failure mechanic, not its remediation.
 
 ---
 
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: provenance; trust policy; validation rules; allowed channels; persistence policy; anomaly thresholds
+- **Steps**: verify provenance; quarantine untrusted/unknown sources; validate before persistence; separate data vs instruction channels; monitor for anomalies and rollbacks
+- **Checks**: provenance recorded; only trusted channels persisted; validation passed before reuse; anomalies surfaced to human review
+- **Stop/escate**: provenance missing; trust policy unclear; validation failed but persistence requested
+
+---
+
 ## References
 
 Foundational and applied work informing poisoning includes:

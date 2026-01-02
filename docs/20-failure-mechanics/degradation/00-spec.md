@@ -191,6 +191,18 @@ It defines the failure mechanic, not its remediation.
 
 ---
 
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: attention budget; context assembly (history/retrievals/tool outputs); constraint list with authority; signal classification
+- **Steps**: measure attention load; identify high-signal constraints; cap and trim retrieval/tool outputs; compress/dedupe history; reorder to put constraints first
+- **Checks**: budget under target; constraints present earliest; duplicates removed; verbose/noisy channels masked; weak signals preserved
+- **Stop/escate**: budget unknown; constraint would be dropped/compressed; provenance missing for required constraints
+
+---
+
 ## References
 
 The existence and behavior of degradation are supported by empirical research and production observations, including but not limited to:

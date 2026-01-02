@@ -166,6 +166,18 @@ It defines the failure mechanic, not its mitigation.
 
 ---
 
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: lifetime/expiry rules; validation rules; change signals (task/phase/model); provenance; authoritative source of truth
+- **Steps**: tag artifacts with lifetimes; detect stale/conflicting items; refresh or expire on change; prefer authoritative sources; log promotions/demotions
+- **Checks**: no expired artifacts admitted; authoritative source wins; conflicts resolved; refresh applied after change signals
+- **Stop/escate**: source of truth unclear; required refresh impossible; conflicting instructions with equal authority
+
+---
+
 ## References
 
 Empirical and applied work informing drift includes:

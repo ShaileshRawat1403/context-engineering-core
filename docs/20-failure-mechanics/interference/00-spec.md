@@ -163,6 +163,18 @@ It defines the failure mechanic, not its remediation.
 
 ---
 
+
+---
+
+## Execution Path (quick)
+
+- **Inputs**: authority model; scope map (task/role/phase); channel definitions; context assembly
+- **Steps**: separate instructions by scope/role/channel; enforce authority ordering; block instruction smuggling via data/tools; isolate cross-task bleed; reorder constraints first
+- **Checks**: higher authority intact; out-of-scope items removed; channels respected; constraints precede background
+- **Stop/escate**: authority conflict unresolved; scope ambiguous; constraint would be displaced
+
+---
+
 ## References
 
 Foundational and applied work informing interference includes:
