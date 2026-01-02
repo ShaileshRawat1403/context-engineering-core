@@ -100,7 +100,7 @@ nav:
           - Documentation Assistant: examples/case-studies/documentation-assistant/README.md
           - Incident Response Agent: examples/case-studies/incident-response-agent/README.md
       - Patterns:
-          - Overview: examples/patterns/README.md
+          - Overview: examples/patterns/index.md
           - Retrieval & RAG: examples/patterns/retrieval-and-rag.md
           - Long-Running Context: examples/patterns/long-running-context.md
           - Multi-Agent Orchestration: examples/patterns/multi-agent-orchestration.md
