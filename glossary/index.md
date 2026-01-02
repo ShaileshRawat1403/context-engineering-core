@@ -121,6 +121,172 @@ Expired context is a primary source of silent failure.
 
 ---
 
+## Failure Mechanics (terms)
+
+### Degradation
+
+Quality decay from attention overload or accumulation; weak signals get displaced and outputs become unstable.
+
+---
+
+### Interference
+
+Cross-talk between tasks, roles, or channels where lower-authority or out-of-scope inputs displace intended constraints.
+
+---
+
+### Drift
+
+Directional change over time due to stale context, model updates, or reinforcement of outdated assumptions.
+
+---
+
+### Poisoning
+
+Introduction or persistence of malicious or untrusted inputs that alter behavior or authority; often made permanent through persistence.
+
+---
+
+## Control Mechanisms (terms)
+
+### Selection
+
+Admitting or excluding context items based on authority, relevance, freshness, and provenance under a declared budget.
+
+---
+
+### Ordering
+
+Deliberate placement of context to preserve authority and salience; constraints first, then task, then references/background.
+
+---
+
+### Masking
+
+Redaction or removal of sensitive or irrelevant fields (e.g., tool logs) before context admission; preserves provenance while reducing noise.
+
+---
+
+### Compression
+
+Reducing size while preserving required signal and provenance; constraints are non-compressible; summaries validated before use.
+
+---
+
+### Validation
+
+Gate that checks provenance, scope, authority, and freshness before admission or persistence; rejects or quarantines failures.
+
+---
+
+### Isolation
+
+Separating tasks, roles, tenants, tools, and memories to prevent cross-domain influence; enforces channel and authority boundaries.
+
+---
+
+## Governance Terms
+
+### Review
+
+Human validation of changes, behaviors, or artifacts before acceptance; grounded in evidence and checklists.
+
+---
+
+### Acceptance
+
+Formal sign-off that criteria and validations are met; recorded with evidence and approver authority.
+
+---
+
+### Escalation
+
+Defined path for handling violations, ambiguity, or failure conditions; may pause execution and transfer ownership.
+
+---
+
+### Accountability
+
+Traceable ownership of decisions and outcomes, backed by audit logs, provenance, and authority mapping.
+
+---
+
+## System Manifestations
+
+### Memory
+
+Persistent or semi-persistent storage of context; governed by lifetimes, validation, isolation, and provenance.
+
+---
+
+### Tools
+
+External affordances that produce context or actions; bounded by schemas, trust levels, masking, validation, and isolation.
+
+---
+
+### Agents
+
+Autonomous or semi-autonomous processes bound by explicit scope, authority, and allowed actions; outputs validated and logged.
+
+---
+
+### Evaluation
+
+Processes that measure system behavior against defined criteria; isolated from runtime/training; requires rubric, samples, and provenance.
+
+---
+
+## Operational Vocabulary
+
+### Authority Model
+
+Explicit precedence of instructions and sources (e.g., system > developer > task > user > references > tools) that ordering and validation must respect.
+
+---
+
+### Provenance
+
+Trace of where a context element came from (source, time, authority); required for validation, trust, and rollback.
+
+---
+
+### Budget
+
+Declared limit on attention/tokens for a task; governs selection, compression, and ordering decisions.
+
+---
+
+### TTL (Time To Live)
+
+Lifetime bound after which a context element must expire or be refreshed; enforced at admission and persistence.
+
+---
+
+### Channel Boundary
+
+Separation between instruction, data, policy, tool output, and feedback channels to prevent instruction smuggling and authority confusion.
+
+---
+
+### Handoff Artifact
+
+Structured output passed between scoped roles or tasks (e.g., result/status/error), not the upstream prompt; prevents scope bleed.
+
+---
+
+### Constraint
+
+A binding rule that must hold (e.g., safety, policy, authority); must be pinned in ordering and protected from compression or demotion.
+
+---
+
+### Context Assembly
+
+The composed set of context elements (constraints, task, history, retrievals, tool outputs, references) prepared for a model/agent under budgets and controls.
+
+---
+
 ## Failure-Related Terms
 
 ### Failure
@@ -403,4 +569,3 @@ Lifetime bound after which a context element must expire or be refreshed.
 Structured output passed between scoped roles/tasks (result/status/error), not the upstream prompt.
 
 ---
-
