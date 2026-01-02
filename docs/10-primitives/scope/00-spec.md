@@ -251,6 +251,14 @@ It defines applicability, not behavior.
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `scope`, `boundaries`, `attention`
+- **Failures**: `interference`
+- **Controls**: `ordering`, `selection`
+
 ## Status
 
 This specification is **stable**.

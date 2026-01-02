@@ -191,6 +191,14 @@ These works document integrity attacks across data, prompts, and learning system
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `boundaries`, `lifetimes`, `scope`
+- **Failures**: `poisoning`
+- **Controls**: `validation`, `isolation`, `masking`, `selection`
+
 ## Status
 
 This specification is **stable**.

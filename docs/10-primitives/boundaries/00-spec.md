@@ -255,6 +255,14 @@ It defines structure, not behavior.
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `boundaries`, `scope`, `lifetimes`
+- **Failures**: `interference`, `poisoning`, `drift`
+- **Controls**: `isolation`, `validation`, `masking`
+
 ## Status
 
 This specification is **stable**.

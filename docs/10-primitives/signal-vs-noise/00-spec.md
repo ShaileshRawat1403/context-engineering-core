@@ -208,6 +208,14 @@ It defines a constraint, not a solution.
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `signal vs noise`, `attention`
+- **Failures**: `degradation`, `interference`
+- **Controls**: `selection`, `compression`, `masking`, `ordering`
+
 ## Status
 
 This specification is **stable**.

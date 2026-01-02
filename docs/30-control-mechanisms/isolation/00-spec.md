@@ -233,6 +233,14 @@ Anything weaker is coordination, not isolation.
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `boundaries`, `scope`
+- **Failures**: `interference`, `poisoning`
+- **Controls**: `isolation`
+
 ## Status
 
 This specification is **stable**.

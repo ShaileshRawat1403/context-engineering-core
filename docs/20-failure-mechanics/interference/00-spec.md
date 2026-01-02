@@ -188,6 +188,14 @@ These works document conflict, coordination failure, and attention competition i
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `boundaries`, `scope`, `attention`
+- **Failures**: `interference`
+- **Controls**: `ordering`, `selection`, `isolation`, `masking`
+
 ## Status
 
 This specification is **stable**.

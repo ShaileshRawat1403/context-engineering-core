@@ -211,6 +211,14 @@ Masking enforces separation, not correctness.
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `boundaries`, `signal vs noise`
+- **Failures**: `degradation`, `poisoning`, `interference`
+- **Controls**: `masking`
+
 ## Status
 
 This specification is **stable**.

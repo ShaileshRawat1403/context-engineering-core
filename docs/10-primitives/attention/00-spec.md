@@ -120,6 +120,14 @@ It defines the constraint, not its vendor-specific behavior.
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `attention`
+- **Failures**: `degradation`, `interference`
+- **Controls**: `selection`, `ordering`, `compression`
+
 ## Status
 
 This specification is **stable**.  

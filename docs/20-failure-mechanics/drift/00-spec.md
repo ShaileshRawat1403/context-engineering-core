@@ -192,6 +192,14 @@ These works establish drift as a persistent, alignment-related failure across ad
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `lifetimes`, `scope`
+- **Failures**: `drift`
+- **Controls**: `validation`, `selection`, `compression`
+
 ## Status
 
 This specification is **stable**.

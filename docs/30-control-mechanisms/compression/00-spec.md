@@ -238,6 +238,14 @@ Compression is a risk management tool.
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `attention`, `signal vs noise`
+- **Failures**: `degradation`
+- **Controls**: `compression`
+
 ## Status
 
 This specification is **stable**.

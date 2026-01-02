@@ -217,6 +217,14 @@ These references demonstrate that quality decay, attention dilution, and long-co
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `attention`, `signal vs noise`
+- **Failures**: `degradation`
+- **Controls**: `selection`, `compression`, `ordering`, `masking`
+
 ## Status
 
 This specification is **stable**.

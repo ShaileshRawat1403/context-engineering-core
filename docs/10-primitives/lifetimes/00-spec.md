@@ -266,6 +266,14 @@ It defines temporal validity, not intelligence.
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `lifetimes`, `attention`, `scope`
+- **Failures**: `drift`, `poisoning`
+- **Controls**: `validation`, `compression`
+
 ## Status
 
 This specification is **stable**.

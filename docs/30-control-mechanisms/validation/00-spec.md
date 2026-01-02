@@ -261,6 +261,14 @@ Anything weaker is optional hygiene, not validation.
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `boundaries`, `lifetimes`, `scope`
+- **Failures**: `poisoning`, `drift`, `interference`
+- **Controls**: `validation`
+
 ## Status
 
 This specification is **stable**.

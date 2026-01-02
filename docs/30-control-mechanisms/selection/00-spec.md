@@ -278,6 +278,14 @@ Selection enforces relevance, not truth.
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `attention`, `signal vs noise`, `scope`
+- **Failures**: `degradation`, `interference`
+- **Controls**: `selection`
+
 ## Status
 
 This specification is **stable**.

@@ -238,6 +238,14 @@ Ordering shapes influence, not truth.
 
 ---
 
+---
+
+## Related
+
+- **Primitives**: `boundaries`, `attention`
+- **Failures**: `interference`
+- **Controls**: `ordering`
+
 ## Status
 
 This specification is **stable**.
