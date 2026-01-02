@@ -1316,6 +1316,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#execution-path-quick" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Path (quick)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#status" class="md-nav__link">
     <span class="md-ellipsis">
       Status
@@ -2685,6 +2703,22 @@ Implicit relevance is a failure mode.</p>
 </ul>
 <p>Selection enforces relevance, not truth.</p>
 <hr />
+<hr />
+<h2 id="execution-path-quick">Execution Path (quick)<a class="headerlink" href="#execution-path-quick" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Inputs</strong>: candidate artifacts with relevance/authority scores; selection budget; task/role/phase scope; trust policy</li>
+<li><strong>Steps</strong>: score by authority/relevance/freshness; dedupe; enforce selection budget; drop low-signal/unknown provenance; order admitted set by authority then recency</li>
+<li><strong>Checks</strong>: budget respected; provenance present; constraints retained; denied/unknown sources excluded; duplicates removed</li>
+<li><strong>Stop/escate</strong>: budget unknown; provenance missing for required items; constraint would be dropped</li>
+</ul>
+<hr />
+<hr />
+<h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Primitives</strong>: <code>attention</code>, <code>signal vs noise</code>, <code>scope</code></li>
+<li><strong>Failures</strong>: <code>degradation</code>, <code>interference</code></li>
+<li><strong>Controls</strong>: <code>selection</code></li>
+</ul>
 <h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
 <p>This specification is <strong>stable</strong>.</p>
 <p>It provides sufficient grounding to define selection failure signals, trade-offs, examples, and enforcement checks.</p>
@@ -2714,6 +2748,46 @@ Implicit relevance is a failure mode.</p>
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../compression/00-spec/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Compression">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Compression
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../masking/00-spec/" class="md-footer__link md-footer__link--next" aria-label="Next: Masking">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Masking
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2749,7 +2823,7 @@ Implicit relevance is a failure mode.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "toc.integrate", "content.code.copy", "content.action.edit", "navigation.path"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.expand", "toc.integrate", "content.code.copy", "content.action.edit", "navigation.path"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.bd41221c.min.js"></script>
