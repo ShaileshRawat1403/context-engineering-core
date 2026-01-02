@@ -121,6 +121,15 @@ Role scope enforces responsibility separation.
 
 ---
 
+## Quick Example (Execution)
+
+**Situation**: An agent performs triage (role A) then executes changes (role B) in the same turn; both role prompts live together.  
+**Failure**: Execution output repeats triage cautions and omits required actions; role A instructions bleed into role B.  
+**Intervention**: Apply scope: separate role prompts, pass only the triage output (not the prompt) into execution, and clear role A instructions before role B runs.  
+**Result**: Execution is concise and task-aligned; triage reasoning no longer pollutes downstream behavior.
+
+---
+
 ## Phase Scope
 
 Phase scope defines **when an instruction is active**.

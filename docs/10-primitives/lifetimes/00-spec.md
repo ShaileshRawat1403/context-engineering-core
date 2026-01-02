@@ -137,6 +137,15 @@ Failure risk if misused:
 
 ---
 
+## Quick Example (Execution)
+
+**Situation**: Yesterday’s conversation summary is reused in a new session without validation or expiry.  
+**Failure**: Outdated assumptions persist and drive incorrect answers; drift accumulates.  
+**Intervention**: Mark summaries as session-bound with a 1-session TTL, require validation before renewal, and drop on task change.  
+**Result**: Stale summaries are discarded or refreshed; responses reflect current context only.
+
+---
+
 ## Durable Lifetime
 
 Durable context:

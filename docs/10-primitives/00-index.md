@@ -55,101 +55,54 @@ Every higher-layer document must map back to one or more primitives here.
 
 ---
 
-## Canonical Primitives
+## Canonical Primitives (defined)
 
-The repository currently defines the following primitives.
-
-These are ordered deliberately.
+All primitives below are fully specified and include failure signals, trade-offs, examples, and checks.
 
 ---
 
 ### 1. Attention
 
-**What it constrains**  
-How much of the context can meaningfully influence behavior.
-
-**Core insight**  
-Context size ≠ usable signal.
-
-**Failure pressure introduced**
-- degradation
-- interference amplification
-
-**Defined in**
-- `10-primitives/attention/`
-
-Attention is the hard ceiling on reasoning influence.
+**Constrains**: How much of the context can meaningfully influence behavior.  
+**Core insight**: Context size ≠ usable signal.  
+**Primary failures**: degradation, interference amplification.  
+**Docs**: `10-primitives/attention/`
 
 ---
 
 ### 2. Boundaries
 
-**What they constrain**  
-Where influence is allowed to flow.
-
-**Core insight**  
-Influence without boundaries becomes ambient and accidental.
-
-**Failure pressure introduced**
-- interference
-- poisoning
-- drift acceleration
-
-**Defined in**
-- `10-primitives/boundaries/`
-
-Boundaries govern authority, scope, time, persistence, and channels.
+**Constrains**: Where influence is allowed to flow (authority, scope, time, persistence, channel).  
+**Core insight**: Influence without boundaries becomes ambient and accidental.  
+**Primary failures**: interference, poisoning, drift acceleration.  
+**Docs**: `10-primitives/boundaries/`
 
 ---
 
-## Near-Term Primitives (Declared but Not Yet Expanded)
+### 3. Scope
 
-These primitives are **logically downstream** of Attention and Boundaries.  
-They are referenced but not yet fully specified.
-
-They are listed here to lock intent and prevent accidental redefinition.
-
----
-
-### 3. Scope (Planned)
-
-**What it will constrain**  
-Where instructions, roles, and behaviors apply.
-
-**Reason for separation**  
-Scope is a *specialization of boundaries*, not a synonym.
-
-**Primary failures**
-- interference
-- role collapse
+**Constrains**: Where an instruction or signal applies across tasks, roles, phases, agents, and artifacts.  
+**Core insight**: Global applicability is the default failure mode.  
+**Primary failures**: interference, role collapse.  
+**Docs**: `10-primitives/scope/`
 
 ---
 
-### 4. Lifetimes (Planned)
+### 4. Lifetimes
 
-**What it will constrain**  
-How long context remains valid or influential.
-
-**Reason for separation**  
-Temporal decay and persistence require distinct handling.
-
-**Primary failures**
-- drift
-- poisoning
+**Constrains**: How long context remains valid or influential.  
+**Core insight**: Context does not decay automatically; persistence is a decision.  
+**Primary failures**: drift, poisoning.  
+**Docs**: `10-primitives/lifetimes/`
 
 ---
 
-### 5. Signal vs Noise (Planned)
+### 5. Signal vs Noise
 
-**What it will constrain**  
-What deserves attention at all.
-
-**Reason for separation**  
-Selection and compression depend on this distinction.
-
-**Primary failures**
-- degradation
-- interference
+**Constrains**: What deserves attention at all, per task/role/phase.  
+**Core insight**: Correct-but-irrelevant content is noise; verbosity ≠ salience.  
+**Primary failures**: degradation, interference.  
+**Docs**: `10-primitives/signal-vs-noise/`
 
 ---
 

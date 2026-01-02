@@ -73,6 +73,15 @@ flowchart TD
 
 ---
 
+## Quick Example (Execution)
+
+**Situation**: Long-running chat (200 turns) with verbose tool logs and retrievals; safety constraint appears once near the top.  
+**Failure**: Safety constraint intermittently ignored as logs and retrievals dominate attention.  
+**Intervention**: Keep last N turns verbatim, compress older turns, mask tool logs to result/status/error, and pin the safety constraint first.  
+**Result**: Constraint is consistently honored; attention utilization drops below budget and responses stabilize.
+
+---
+
 ## Attention Invariants
 
 - Increasing context without arbitration **reduces** effective attention.

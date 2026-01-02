@@ -198,6 +198,15 @@ Channels exist to prevent category errors.
 
 ---
 
+## Quick Example (Execution)
+
+**Situation**: A retrieval API response includes “suggested next actions” alongside facts; tool logs are appended directly into the prompt.  
+**Failure**: The model treats retrieved “suggested actions” as authoritative instructions; tool log commentary overrides policy.  
+**Intervention**: Enforce channel boundaries—strip advisory text from retrievals, mask tool logs to results/status, admit policy only from an explicit system channel.  
+**Result**: Instructions flow only from the policy channel; retrievals stay data-only; outputs realign to declared authority.
+
+---
+
 ## Boundary Failures (Preview)
 
 When boundaries fail:

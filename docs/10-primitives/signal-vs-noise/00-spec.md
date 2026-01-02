@@ -117,6 +117,15 @@ Signal classification must be phase-aware.
 
 ---
 
+## Quick Example (Execution)
+
+**Situation**: A RAG pipeline retrieves 10 long articles; a one-line safety constraint sits in the prompt header.  
+**Failure**: Responses mirror retrieved prose and ignore the safety constraint; the weak signal is drowned by verbose but relevant noise.  
+**Intervention**: Mark the safety constraint as high-signal, cap retrieval budget, dedupe and trim to top-3 passages, and place constraints first.  
+**Result**: Safety constraints apply consistently; answers stay on-task; retrieval remains useful without overwhelming attention.
+
+---
+
 ## Signal Is Role-Dependent
 
 The same context may differ by role.
