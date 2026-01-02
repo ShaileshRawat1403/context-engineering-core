@@ -207,6 +207,15 @@ Channels exist to prevent category errors.
 
 ---
 
+## Execution Path (quick)
+
+- **Inputs**: authority model (who can override whom); channel definitions (instruction/data/policy/tool/feedback); scope and lifetime rules.
+- **Steps**: classify each context element by channel; admit only allowed channels for the task/phase; enforce authority precedence; block instruction smuggling in data/tool outputs; mask or quarantine untrusted sources.
+- **Checks**: authority order preserved; disallowed channels excluded; provenance present for admitted items; policy only from system channel.
+- **Stop/escate**: channel unclear; authority conflict unresolved; required provenance missing.
+
+---
+
 ## Boundary Failures (Preview)
 
 When boundaries fail:

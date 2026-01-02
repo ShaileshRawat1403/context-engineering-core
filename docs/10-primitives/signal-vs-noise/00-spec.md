@@ -126,6 +126,15 @@ Signal classification must be phase-aware.
 
 ---
 
+## Execution Path (quick)
+
+- **Inputs**: task/role/phase definition; signal taxonomy (high/medium/low); attention budget; retrieval/tool budgets.
+- **Steps**: classify artifacts by signal; pin high-signal items first; cap and trim retrieval/tool outputs; dedupe; mask low-signal/noisy channels.
+- **Checks**: high-signal items present and earliest; budgets respected; duplicates removed; weak signals not displacing constraints.
+- **Stop/escate**: signal classification ambiguous; budget unknown; constraint would be demoted.
+
+---
+
 ## Signal Is Role-Dependent
 
 The same context may differ by role.

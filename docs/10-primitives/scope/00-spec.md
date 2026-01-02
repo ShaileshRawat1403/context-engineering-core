@@ -130,6 +130,15 @@ Role scope enforces responsibility separation.
 
 ---
 
+## Execution Path (quick)
+
+- **Inputs**: task/role/phase definitions; scoped prompts; artifacts tagged with applicability; reset rules between phases.
+- **Steps**: tag every instruction with scope; strip or archive out-of-scope items per phase; pass outputs not prompts between roles; re-apply scope on task/phase change.
+- **Checks**: only in-scope instructions present; prior-phase prompts removed; handoff artifacts clearly typed (result vs prompt); constraints still highest authority.
+- **Stop/escate**: scope ambiguous; multiple scopes conflict; constraint would be dropped by scoping.
+
+---
+
 ## Phase Scope
 
 Phase scope defines **when an instruction is active**.

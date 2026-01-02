@@ -82,6 +82,15 @@ flowchart TD
 
 ---
 
+## Execution Path (quick)
+
+- **Inputs**: declared attention budget; context assembly (history, retrievals, tool outputs); constraint list with authority.
+- **Steps**: estimate token/attention load; pin constraints first; cap retrieval/tool budgets; compress/dedupe history; mask noisy fields.
+- **Checks**: budget < target; constraints present and earliest; weak signals not displaced; noisy channels masked.
+- **Stop/escate**: budget unknown; constraint would be dropped/compressed; provenance missing for pinned items.
+
+---
+
 ## Attention Invariants
 
 - Increasing context without arbitration **reduces** effective attention.

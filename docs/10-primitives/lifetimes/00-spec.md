@@ -146,6 +146,15 @@ Failure risk if misused:
 
 ---
 
+## Execution Path (quick)
+
+- **Inputs**: lifetime policy (ephemeral/session/durable/persistent); TTLs per class; validation rules; task/phase change signals.
+- **Steps**: tag artifacts with lifetime; enforce TTL/expiry on session or task change; validate before promotion/renewal; quarantine expired items.
+- **Checks**: no expired artifacts admitted; promotions recorded with provenance; required refresh/validation completed; persistent items approved by authority.
+- **Stop/escate**: lifetime missing; promotion requested without validation; expired but required artifact.
+
+---
+
 ## Durable Lifetime
 
 Durable context:
