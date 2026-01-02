@@ -200,6 +200,17 @@ Masking enforces separation, not correctness.
 
 ---
 
+---
+
+## Execution Path (quick)
+
+- **Inputs**: masking policy (fields/regex/redaction rules); data classifications; allowed channels; audit log
+- **Steps**: classify artifacts; redact sensitive/unneeded fields; drop disallowed channels; mask tool logs to result/status/error; log redactions
+- **Checks**: sensitive fields removed; only allowed channels passed; provenance intact; masks logged
+- **Stop/escate**: classification unknown; masking would drop required constraint; redaction policy missing
+
+---
+
 ## Status
 
 This specification is **stable**.

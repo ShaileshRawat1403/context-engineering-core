@@ -227,6 +227,17 @@ Compression is a risk management tool.
 
 ---
 
+---
+
+## Execution Path (quick)
+
+- **Inputs**: compression policy; source artifacts with provenance; budget targets; validation rules
+- **Steps**: select compressible items; summarize with provenance; preserve constraints non-compressible; validate summaries; record deltas
+- **Checks**: budget met; provenance retained; constraints intact; validation passed; original available for audit
+- **Stop/escate**: constraint would be compressed/dropped; provenance missing; validation fails
+
+---
+
 ## Status
 
 This specification is **stable**.

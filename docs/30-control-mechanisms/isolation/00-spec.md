@@ -213,6 +213,17 @@ Anything weaker is coordination, not isolation.
 
 ---
 
+---
+
+## Execution Path (quick)
+
+- **Inputs**: isolation policy (tenants/tasks/roles); channel boundaries; memory separation rules; routing table
+- **Steps**: route inputs/outputs per isolation domains; prevent cross-tenant/task/role leakage; separate memories; restrict tool access per domain
+- **Checks**: no cross-domain artifacts; tools scoped per domain; memories separated; audit trails intact
+- **Stop/escate**: domain ambiguous; shared state required without policy; attempted cross-domain access
+
+---
+
 ## References
 
 - Process and memory isolation in operating systems

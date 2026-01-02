@@ -267,6 +267,17 @@ Selection enforces relevance, not truth.
 
 ---
 
+---
+
+## Execution Path (quick)
+
+- **Inputs**: candidate artifacts with relevance/authority scores; selection budget; task/role/phase scope; trust policy
+- **Steps**: score by authority/relevance/freshness; dedupe; enforce selection budget; drop low-signal/unknown provenance; order admitted set by authority then recency
+- **Checks**: budget respected; provenance present; constraints retained; denied/unknown sources excluded; duplicates removed
+- **Stop/escate**: budget unknown; provenance missing for required items; constraint would be dropped
+
+---
+
 ## Status
 
 This specification is **stable**.

@@ -241,6 +241,17 @@ Anything weaker is optional hygiene, not validation.
 
 ---
 
+---
+
+## Execution Path (quick)
+
+- **Inputs**: validation rules; authority model; artifacts to admit/persist; required provenance
+- **Steps**: verify provenance; check scope/authority/freshness; apply acceptance criteria; tag pass/fail; quarantine failures; require approval for risky promotions
+- **Checks**: all admitted items validated; failures quarantined; authority preserved; freshness within limits
+- **Stop/escate**: provenance missing; authority unclear; validation failed but admission requested
+
+---
+
 ## References
 
 - Concept drift in machine learning (survey literature on drift detection and adaptation)

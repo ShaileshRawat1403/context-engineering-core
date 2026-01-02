@@ -227,6 +227,17 @@ Ordering shapes influence, not truth.
 
 ---
 
+---
+
+## Execution Path (quick)
+
+- **Inputs**: authority model; scoped constraint list; ordered slots (system/developer/task/context/references)
+- **Steps**: place system/developer constraints first; task/phase next; latest user/context; references after constraints; keep non-compressible items pinned
+- **Checks**: authority order preserved; constraints first; no higher-order item displaced; order stable after rebuild
+- **Stop/escate**: authority conflict; ordering would remove/push constraints; scope unclear
+
+---
+
 ## Status
 
 This specification is **stable**.
